@@ -1,6 +1,8 @@
 {
   "name": "modular-ui-kit",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "vitinschii.eugenia@gmail.com",
+  "description": "A modular, lightweight UI kit built with Vue 3, Pinia, and TypeScript.",
   "private": true,
   "type": "module",
   "scripts": {

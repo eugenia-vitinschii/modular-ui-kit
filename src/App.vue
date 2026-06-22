@@ -1,19 +1,23 @@
 <template>
   <div class="wrapper">
-    <header>
-      <h1>Hi!</h1>
-    </header>
+    <app-header />
     <div class="content">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur dignissimos tempore adipisci
-        doloribus aut fuga est rerum, optio ipsam! Ipsam aut accusantium minus tenetur. Laborum tempore distinctio enim
-        numquam.</p>
+      <router-view />
+      <div class="container">
+        <p class="body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error aspernatur dignissimos
+          tempore adipisci
+          doloribus aut fuga est rerum, optio ipsam! Ipsam aut accusantium minus tenetur. Laborum tempore distinctio
+          enim
+          numquam.</p>
+      </div>
     </div>
-    <div class="header">
-      <p>>modular-ui-kit</p>
-    </div>
+    <app-footer />
   </div>
 </template>
 
 <script setup lang="ts">
+/* === COMPONENTS === */
+import AppHeader from './widgets/AppHeader.vue';
+import AppFooter from './widgets/AppFooter.vue';
 
 </script>
