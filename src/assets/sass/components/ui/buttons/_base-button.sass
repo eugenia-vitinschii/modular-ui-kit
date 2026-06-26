@@ -1,0 +1,64 @@
+/* === BASE BUTTON === */
+
+//components/button
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.btn
+   display: flex
+   align-items: center
+   justify-content: center
+   border-radius: 12px
+   border: 1px solid transparent
+   width: 200px
+   margin: 5px 5px 5px 0px
+   padding: 20px
+   transition: $transition
+   font-family: inherit
+   cursor: pointer
+   &:disabled
+      opacity: $opacity
+      cursor: not-allowed
+
+/*=== SIZES ===*/
+.btn--sm
+   @include button-size(38, 14px, 14px)
+.btn--md
+   @include button-size(44, 16px, 15px)
+.btn--lg
+   @include button-size(50, 18px, 16px)
+
+/*=== VARIANTS ===*/
+.btn--primary
+   @include button-variant($primary, $text,$primary,  $bg-card)
+
+.btn--secondary
+   @include button-variant( $bg-soft,$text, $bg-soft, $bg-card)
+
+.btn--danger
+   @include button-variant($danger,$text,$danger,  $bg-card)
+
+.btn--ghost
+   @include button-variant( transparent, $text-muted, $border, $bg-soft)
+
+
+/*=== LOADING ===*/
+.is-loading .btn__content
+   opacity: 0.6
+
+.btn__spinner
+   width: 16px
+   height: 16px
+   border-radius: 50%
+   border: 2px solid gray
+   border-top-color: white
+   animation: spin 0.9s linear infinite
+   margin-right: 9px
+
+@keyframes spin
+   from
+      transform: rotate(0deg)
+   to
+      transform: rotate(360deg)
