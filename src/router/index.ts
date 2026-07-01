@@ -17,7 +17,13 @@ const routes: RouteRecordRaw[] = [
             path: 'buttons',
             name: 'ui-buttons',
             component: () => import('../views/ButtonsView.vue')
-         }
+         },
+         {
+            path: 'form',
+            name: 'ui-form',
+            component: () => import('../views/FormElementsView.vue')
+         },
+
       ]
    }
 ]

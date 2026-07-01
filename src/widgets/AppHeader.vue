@@ -10,6 +10,9 @@
                   <li>
                      <router-link to="/ui/buttons" class="body-text"> buttons</router-link>
                   </li>
+                  <li>
+                     <router-link to="/ui/form" class="body-text">form elements</router-link>
+                  </li>
                </ul>
             </nav>
 

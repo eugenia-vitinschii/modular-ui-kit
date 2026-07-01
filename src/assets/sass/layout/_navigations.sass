@@ -2,7 +2,7 @@
 /*=== [wrapper: header, content, footer] ===*/
 
 @use '../abstracts/colors' as *
-
+@use '../abstracts/mixins' as *
 .wrapper
    display: flex
    flex-direction: column
@@ -23,3 +23,6 @@
    max-width: 1400px
    margin: 0px auto
    padding: 0px 20px
+
+.section
+   @include container()
