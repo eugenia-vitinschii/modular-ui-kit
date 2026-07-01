@@ -1,0 +1,29 @@
+/* === INPUT === */
+
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.base-input
+   display: flex
+   flex-direction: column
+   &__control
+      @include form-element()
+      color: $text
+      &:focus
+         border-color: $primary-hover
+         box-shadow: 0 0 0 4px rgba($primary, 0.15)
+      &:disabled
+         opacity: $opacity
+         cursor: not-allowed
+   &.is-error .base-input__control
+      border-color:$danger
+
+
+// change calendar icon color 
+input[type='date']::-webkit-calendar-picker-indicator 
+   filter: invert(98%) sepia(1%) saturate(678%) hue-rotate(181deg) brightness(98%) contrast(94%)
+
+/* === CodePen Home CSS filter generator to convert from black to target hex color === */
+// ======>  https://codepen.io/sosuke/pen/Pjoqqp 

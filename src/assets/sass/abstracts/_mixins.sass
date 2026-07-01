@@ -1,21 +1,23 @@
 /* === MIXINS === */
 @use '../abstracts/variables' as *
+@use '../abstracts/colors' as *
+
+
 
 /* === fonts === */
 @mixin font-size($font-size, $line-height)
    font-size: $font-size
    line-height: $line-height
 
-@mixin font-style($color: $text, $padding-top: 0, $text-align: left)
+@mixin font-style($color: $text, $spaceding-top: 0, $text-align: left)
    color: $color
-   padding-top: $padding-top
+   padding-top: $spaceding-top
    text-align: $text-align
 
 /* === BUTTONS ===*/
-
-@mixin button-size($height, $padding, $font-size)
+@mixin button-size($height, $spaceding, $font-size)
    height: $height
-   padding: 0 $padding
+   padding: 0 $spaceding
    font-size: $font-size
 
 @mixin button-variant($bg, $color, $border-color, $hover-bg: null)
@@ -30,3 +32,43 @@
    &:disabled
       opacity: 0.3
 
+/* === FORM ELEMENTS === */
+@mixin form-element($bg: $bg-soft)
+   background: $bg
+   border: 1px solid $border
+   padding: $space-content-md
+   transition: $transition
+
+@mixin form-text($font-size: $body-text, $color: $text)
+   font-size: $font-size
+   color: $color
+
+
+/* ===  UI ELEMNTS & BLOKS === */
+//for blocks  [forms, cards. sections,...]
+@mixin container($bg: $bg-card)
+   width: 100%
+   background: $bg
+   transition: $transition
+   padding: $space-container-lg 
+   margin: $space-container-lg 0px
+   @media (max-width: 1024px)
+      padding: $space-container-md
+      margin: $space-container-md 0px
+   @media (max-width: 768px)
+      padding: $space-container-sm
+      margin: $space-container-sm 0px
+
+//elements [input, buttons, icons, ...]
+@mixin content($bg: $bg-card)
+   width: 100%
+   background: $bg
+   transition: $transition
+   padding: $space-content-lg
+   margin: $space-content-lg 0px
+   @media (max-width: 1024px)
+      padding: $space-content-md
+      margin: $space-content-md 0px
+   @media (max-width: 768px)
+      padding: $space-content-sm
+      margin: $space-content-sm 0px
