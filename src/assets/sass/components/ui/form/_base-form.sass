@@ -1,0 +1,23 @@
+/* === BASE FORM === */
+
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+/* === LABEL & ERROR & HINT === */
+.form-error
+   @include form-text(13px, $danger)
+
+.form-hint
+   @include form-text(13px, $text-muted)
+
+.form-label
+   @include form-text(12px, $text-muted)
+   margin: 0px 10px 20px 0px
+
+/** === FORM  === */
+.form
+   &__item
+      @include  content()
+
+
