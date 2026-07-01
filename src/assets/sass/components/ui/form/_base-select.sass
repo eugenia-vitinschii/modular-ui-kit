@@ -1,0 +1,28 @@
+/* === SELECT === */
+
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.base-select
+   display: flex
+   flex-direction: column
+   &__wrapper
+      position: relative
+   &__field
+      @include form-element()
+      width: 100%
+      appearance: none
+      border-radius: 0px
+      cursor: pointer
+      &.is-error
+         border-color: $danger
+   &__icon
+      position: absolute
+      right: 14px
+      top: 50%
+      transform: translateY(-50%)
+      pointer-events: none
+      font-size: 14px
+      color: $text-muted

@@ -38,6 +38,13 @@
    border: 1px solid $border
    padding: $space-content-md
    transition: $transition
+   color: $text
+   &:focus
+      border-color: $primary-hover
+      box-shadow: 0 0 0 4px rgba($primary, 0.15)
+   &:disabled
+      opacity: $opacity
+      cursor: not-allowed
 
 @mixin form-text($font-size: $body-text, $color: $text)
    font-size: $font-size
