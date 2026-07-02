@@ -3,8 +3,8 @@
       <label class="form-label" v-if="label" :for="id">
          {{ label }}
       </label>
-      <textarea class="base-textarea__field" :class="{ 'is-error': !!error, 'is-disabled': disabled }" :id="id"
-         :placeholder="placeholder" :value="modelValue" :rows="rows" :disabled="disabled" @input="onInput">
+      <textarea class="base-textarea__field" :class="{ 'is-error': !!error }" :id="id" :placeholder="placeholder"
+         :value="modelValue" :rows="rows" :disabled="disabled" @input="onInput">
    </textarea>
       <p class="form-error" v-if="error">{{ error }}</p>
       <p class="form-hint" v-else-if="hint">{{ hint }}</p>

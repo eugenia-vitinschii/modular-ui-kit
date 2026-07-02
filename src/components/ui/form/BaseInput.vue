@@ -3,7 +3,7 @@
       <label v-if="label" class="form-label" :for="id">
          {{ label }}
       </label>
-      <input class="base-input__control" :class="{ 'is-error': !!error, 'is-disabled': disabled }" :id="id" :type="type"
+      <input class="base-input__control" :class="{ 'is-error': !!error }" :id="id" :type="type"
          :placeholder="placeholder" :disabled="disabled" :value="modelValue" @input="onInput">
       <p class="form-error" v-if="error">{{ error }}</p>
       <p class="form-hint" v-else-if="hint">{{ hint }}</p>
