@@ -1,0 +1,17 @@
+/* === TEXTAREA === */
+
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+.base-textarea
+   display: flex
+   flex-direction: column
+   &__field
+      @include form-element()
+      resize: vertical
+      min-height: 120px
+      &::placeholder
+         color: $text-muted
+
+
