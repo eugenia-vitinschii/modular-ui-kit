@@ -1,10 +1,10 @@
 <template>
-   <div class="base-input" :class="{ 'is-error': !!error, 'is-disabled': disabled }">
+   <div class="base-input">
       <label v-if="label" class="form-label" :for="id">
          {{ label }}
       </label>
-      <input class="base-input__control" :id="id" :type="type" :placeholder="placeholder" :disabled="disabled"
-         :value="modelValue" @input="onInput">
+      <input class="base-input__control" :class="{ 'is-error': !!error, 'is-disabled': disabled }" :id="id" :type="type"
+         :placeholder="placeholder" :disabled="disabled" :value="modelValue" @input="onInput">
       <p class="form-error" v-if="error">{{ error }}</p>
       <p class="form-hint" v-else-if="hint">{{ hint }}</p>
    </div>

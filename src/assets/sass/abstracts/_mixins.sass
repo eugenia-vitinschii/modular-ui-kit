@@ -39,12 +39,18 @@
    padding: $space-content-md
    transition: $transition
    color: $text
-   &:focus
+   &:focus, &:focus-visible
       border-color: $primary-hover
       box-shadow: 0 0 0 4px rgba($primary, 0.15)
+      outline: none
    &:disabled
       opacity: $opacity
       cursor: not-allowed
+   &.is-error
+      border-color: $danger
+      &:focus, &:focus-visible
+         border-color: $danger!important
+         box-shadow: 0 0 0 4px rgba($danger, 0.15)
 
 @mixin form-text($font-size: $body-text, $color: $text)
    font-size: $font-size
