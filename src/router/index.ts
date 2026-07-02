@@ -21,7 +21,29 @@ const routes: RouteRecordRaw[] = [
          {
             path: 'form',
             name: 'ui-form',
-            component: () => import('../views/FormElementsView.vue')
+            redirect: 'ui/form/inputs',
+            children: [
+               {
+                  path: 'inputs',
+                  name: 'ui-form-inputs',
+                  component: () => import('../views/InputView.vue')
+               },
+               {
+                  path: 'selects',
+                  name: 'ui-form-selects',
+                  component: () => import('../views/SelectView.vue')
+               },
+               {
+                  path: 'textareas',
+                  name: 'ui-form-textareas',
+                  component: () => import('../views/TextareaView.vue')
+               },
+               {
+                  path: 'checkboxes',
+                  name: 'ui-form-checkboxes',
+                  component: () => import('../views/CheckboxView.vue')
+               },
+            ]
          },
 
       ]

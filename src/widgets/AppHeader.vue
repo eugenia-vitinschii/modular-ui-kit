@@ -11,7 +11,16 @@
                      <router-link to="/ui/buttons" class="body-text"> buttons</router-link>
                   </li>
                   <li>
-                     <router-link to="/ui/form" class="body-text">form elements</router-link>
+                     <router-link to="/ui/form/inputs" class="body-text">input</router-link>
+                  </li>
+                  <li>
+                     <router-link to="/ui/form/selects" class="body-text">select</router-link>
+                  </li>
+                  <li>
+                     <router-link to="/ui/form/textareas" class="body-text">textarea</router-link>
+                  </li>
+                  <li>
+                     <router-link to="/ui/form/checkboxes" class="body-text">checkbox</router-link>
                   </li>
                </ul>
             </nav>
