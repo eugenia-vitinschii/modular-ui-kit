@@ -1,0 +1,52 @@
+/* === CHECKBOX === */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+.base-checkbox
+   position: relative
+   &__wrapper
+      width: 100%
+      cursor: pointer
+      display: flex
+      flex-direction: column
+   &__data
+      display: inline-flex
+      align-items: center
+      user-select: none
+      margin-bottom: 6px
+   &__field
+      position: absolute
+      opacity: 0
+      width: 0
+      height: 0
+      appearance: none
+      &:focus-visible + .base-checkbox__box
+         border-color: $primary-hover
+      &:checked + .base-checkbox__box
+         border-color: $primary
+         .base-checkbox__check
+            transform: scale(1)
+      &:disabled
+         & + .base-checkbox__box
+            opacity: $opacity
+            cursor: not-allowed
+   &__box
+      @include form-element()
+      width: 20px
+      height: 20px
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-shrink: 0
+   &__check
+      color: white
+      transform: scale(0)
+      transition: $transition
+      color: $text
+   &__label
+      margin: 10px
+
+
+   
