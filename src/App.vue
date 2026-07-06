@@ -2,6 +2,7 @@
   <div class="wrapper">
     <app-header />
     <div class="content">
+      <base-breadcrumbs />
       <router-view />
     </div>
     <app-footer />
@@ -12,5 +13,6 @@
 /* === COMPONENTS === */
 import AppHeader from './widgets/AppHeader.vue';
 import AppFooter from './widgets/AppFooter.vue';
+import BaseBreadcrumbs from './components/ui/navigation/BaseBreadcrumbs.vue';
 
 </script>
