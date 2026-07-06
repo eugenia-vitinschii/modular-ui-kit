@@ -1,0 +1,22 @@
+/* === BREADCRUMBS === */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.base-breadcrumbs
+   &__list
+      display: flex
+      align-items: center
+      list-style: none
+   &__item
+      display: flex
+      align-items: center
+      a, span
+         margin-top: 0px
+         padding-top: 0px
+      a:hover
+         color: $primary-hover
+   &__item-separator
+      margin: 0 8px
