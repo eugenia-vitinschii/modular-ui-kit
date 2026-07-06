@@ -1,0 +1,51 @@
+/* === BASE BUTTON ICON  === */
+
+//components/button
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.btn-icon
+   border: none
+   background: none
+   cursor: pointer
+   display: inline-flex
+   align-items: center
+   transition: $transition     
+   justify-content: center
+   margin: 0
+   padding: 0
+   min-height: 36px
+   min-width: 36px
+   svg
+      transition: $transition   
+      width: 20px
+      height: 20px
+   &:disabled
+      opacity: $opacity
+      cursor: not-allowed
+   &:hover:not(:disabled)
+      svg
+         opacity: $opacity
+   @media (max-width: 1024px)
+      min-height: 40px
+      min-width: 40px
+      svg
+         width: 22px
+         height: 22px
+   @media (max-width: 767px)
+      min-height:44px
+      min-width: 44px
+      svg
+         width: 24px
+         height: 24px
+   &--danger
+      svg
+         fill: $danger
+   &--success
+      svg
+         fill: $success
+   &--default
+      svg
+         fill: $text
