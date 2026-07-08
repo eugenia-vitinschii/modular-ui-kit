@@ -1,0 +1,18 @@
+/* ================= ERROR STATE =================  */
+
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+   
+.error-state
+   @include border($border-color: $danger, $border-style: dotted)
+   padding: 10px
+   &__text
+      h3
+         color: $danger
+      p,h3
+         text-align: center
+   &__action
+      display: flex
+      justify-content: center
