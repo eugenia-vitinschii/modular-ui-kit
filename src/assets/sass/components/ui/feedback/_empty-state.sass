@@ -1,0 +1,27 @@
+/* ================= EMPTY STATE =================  */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+   
+.empty-state
+   @include border()
+   padding: 10px
+   &__text
+      p,h3
+         text-align: center
+   &__actions
+      display: flex
+      justify-content: center
+
+/* ===  VARIANTS === */
+.empty-state--default
+   border-color: $text
+
+.empty-state--accent
+   border-color: $success
+   p, h3, a
+      color: $success
+
+
