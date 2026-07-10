@@ -7,7 +7,7 @@
             <span class="base-checkbox__box" :class="{ 'is-error': !!error }">
                <span class="base-checkbox__check">✓</span>
             </span>
-            <span class="base-checkbox__label form-label" v-if="label"> {{ label }}</span>
+            <span class="form-label form-label--side" v-if="label"> {{ label }}</span>
          </div>
          <div class="base-checkbox__info">
             <p class="form-error" v-if="error">{{ error }}</p>

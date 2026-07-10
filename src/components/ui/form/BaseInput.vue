@@ -1,6 +1,6 @@
 <template>
    <div class="base-input">
-      <label v-if="label" class="form-label" :for="id">
+      <label v-if="label" class="form-label form-label--top" :for="id">
          {{ label }}
       </label>
       <input class="base-input__control" :class="{ 'is-error': !!error }" :id="id" :type="type"

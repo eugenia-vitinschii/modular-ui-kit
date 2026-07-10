@@ -12,12 +12,13 @@
    @include form-text(13px, $text-muted)
 
 .form-label
-   @include form-text(12px, $text-muted)
-   margin: 0px 10px 20px 0px
-
-/** === FORM  === */
+   @include form-text(13px, $text-muted)
+   &--top
+      margin: 0 0 10px 0
+   &--side
+      margin: 10px
+      
+/* === LABEL & ERROR & HINT === */
 .form
    &__item
       @include  content()
-
-

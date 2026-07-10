@@ -7,7 +7,7 @@
             <span class="base-radio__box" :class="{ 'is-error': !!error }">
                <span class="base-radio__circle"></span>
             </span>
-            <span class="base-radio__label form-label" v-if="label"> {{ label }}</span>
+            <span class="form-label form-label--side" v-if="label"> {{ label }}</span>
          </div>
       </label>
       <div class="base-radio__info">

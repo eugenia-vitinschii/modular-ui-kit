@@ -1,6 +1,6 @@
 <template>
    <div class="base-textarea">
-      <label class="form-label" v-if="label" :for="id">
+      <label class="form-label form-label--top" v-if="label" :for="id">
          {{ label }}
       </label>
       <textarea class="base-textarea__field" :class="{ 'is-error': !!error }" :id="id" :placeholder="placeholder"
