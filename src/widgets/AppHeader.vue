@@ -22,6 +22,12 @@
                   <li>
                      <router-link to="/ui/form/checkboxes" class="body-text">checkbox</router-link>
                   </li>
+                  <li>
+                     <router-link to="/ui/form/radio" class="body-text">radio</router-link>
+                  </li>
+                  <li>
+                     <router-link to="/ui/flow" class="body-text">component flow</router-link>
+                  </li>
                </ul>
             </nav>
 

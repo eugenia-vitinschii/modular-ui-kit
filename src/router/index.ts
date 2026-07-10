@@ -22,6 +22,12 @@ const routes: RouteRecordRaw[] = [
             meta: { title: "Buttons" },
          },
          {
+            path: 'flow',
+            name: 'ui-flow',
+            component: () => import('../views/ComponentFlowView.vue'),
+            meta: { title: "Component Flow" },
+         },
+         {
             path: 'form',
             name: 'ui-form',
             meta: { title: "Form" },
@@ -49,6 +55,12 @@ const routes: RouteRecordRaw[] = [
                   name: 'ui-form-checkboxes',
                   component: () => import('../views/CheckboxView.vue'),
                   meta: { title: "Checkboxes" }
+               },
+               {
+                  path: 'radio',
+                  name: 'ui-form-radio',
+                  component: () => import('../views/RadioView.vue'),
+                  meta: { title: "Radio" }
                },
             ]
          },
