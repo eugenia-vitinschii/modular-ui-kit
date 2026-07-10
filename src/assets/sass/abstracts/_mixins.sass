@@ -13,7 +13,7 @@
    text-align: $text-align
 
 /* === BORDER === */
-@mixin border( $border-width:$border-width,  $border-style:  $border-style, $border-color: $bg, $border-radius: $border-radius)
+@mixin border( $border-width:$border-width,  $border-style: $border-style, $border-color: $bg, $border-radius: $border-radius)
    border: $border-width $border-style $border-color
    border-radius: $border-radius
 
@@ -42,6 +42,7 @@
    padding: $space-content-md
    transition: $transition
    color: $text
+   margin-top: 5px
    &:focus, &:focus-visible
       border-color: $primary-hover
       box-shadow: 0 0 0 4px rgba($primary, 0.15)
@@ -88,3 +89,17 @@
    @media (max-width: 768px)
       padding: $space-content-sm
       margin: $space-content-sm 0px
+
+
+/*=== SKELETONS ===*/
+@mixin skeleton-color()
+   background: $bg
+   opacity: $opacity
+
+@mixin skeleton-block($width:100%, $height: 50px, $margin-top: 20px , $border-radius: $border-radius)
+   @include skeleton-color()
+   margin-top: $margin-top
+   width: $width
+   height: $height
+   border-radius: $border-radius
+

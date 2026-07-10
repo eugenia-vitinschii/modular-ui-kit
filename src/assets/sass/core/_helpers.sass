@@ -1,0 +1,42 @@
+/* ==== HELPERS ==== */
+@use '../abstracts/mixins' as *
+@use '../abstracts/variables' as *
+@use '../abstracts/colors' as *
+
+/* ==== Sections ==== */
+.section
+   @include container()
+   &__item
+      @include content()
+
+/* ==== Skeleton shimmer ==== */
+.shimmer
+   position: relative
+   overflow: hidden
+
+.shimmer::before
+   content: ''
+   position: absolute
+   top: 0
+   left: -150px
+   height: 100%
+   width: 150px
+   background: linear-gradient(to right, transparent 0%, $text-muted 50%, transparent 100%)
+   animation: loading 2.6s infinite
+
+@keyframes loading
+   0%
+      left: -150px
+
+   100%
+      left: 100%
+
+/* ================= TRANSITIONS =================  */
+.fade-enter-active,
+.fade-leave-active
+   transition: opacity .25s ease
+
+.fade-enter-from,
+.fade-leave-to
+   opacity: 0
+

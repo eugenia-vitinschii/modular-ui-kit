@@ -1,0 +1,13 @@
+/* ================= BASE SKELETON =================  */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+.base-skeleton
+   &__circle
+      @include skeleton-block($height:30px, $width: 30px, $border-radius: 50%, $margin-top: 0px )
+   &__title
+      @include skeleton-block($height:30px, $width: 200px )
+   &__content
+      @include skeleton-block($height:20px )
