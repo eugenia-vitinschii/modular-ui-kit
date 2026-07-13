@@ -28,6 +28,9 @@
                   <li>
                      <router-link to="/ui/flow" class="body-text">component flow</router-link>
                   </li>
+                  <li>
+                     <router-link to="/ui/table" class="body-text">table</router-link>
+                  </li>
                </ul>
             </nav>
 
