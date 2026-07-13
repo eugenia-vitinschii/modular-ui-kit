@@ -28,6 +28,12 @@ const routes: RouteRecordRaw[] = [
             meta: { title: "Component Flow" },
          },
          {
+            path: 'table',
+            name: 'ui-table',
+            component: () => import('../views/TableView.vue'),
+            meta: { title: "Table" },
+         },
+         {
             path: 'form',
             name: 'ui-form',
             meta: { title: "Form" },
