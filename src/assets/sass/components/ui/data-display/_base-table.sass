@@ -1,0 +1,26 @@
+/* ================= BASE TABLE =================  */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+.base-table-wrapper
+   width: 100%
+   overflow-x: auto
+   
+
+.base-table
+   border-collapse: collapse
+   width: 100%
+   table-layout: fixed
+   th
+      letter-spacing: 0.9px
+      font-weight: bold
+   tbody tr
+      border-top: $border-width $border-style $border-color
+      transition: $transition
+   tbody tr:hover
+      background: $bg-soft
+   &__actions
+      button, a
+         margin-top: 10px
