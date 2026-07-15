@@ -1,0 +1,23 @@
+/* === Pagination === */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.base-pagination
+   width: 100%
+   display: flex
+   align-items: center
+   justify-content: center
+   gap: 8px
+   p
+      padding-top: 0
+      transition: $transition
+      cursor: pointer !important
+      &:hover
+         color: $primary-hover
+   .btn-icon.is-active
+      p
+         color: $primary !important
+         font-weight: bold
