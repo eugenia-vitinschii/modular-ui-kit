@@ -44,6 +44,9 @@
                </div>
 
             </div>
+            <div class="page__footer">
+               <base-pagination :total-pages="13" :page="currentPage" @change="currentPage = $event" />
+            </div>
          </div>
       </div>
    </div>
@@ -60,6 +63,7 @@ import EmptyState from '@/components/ui/feedback/EmptyState.vue';
 import ErrorState from '@/components/ui/feedback/ErrorState.vue';
 import BaseButton from '@/components/ui/buttons/BaseButton.vue';
 import BaseSkeleton from '@/components/ui/feedback/BaseSkeleton.vue';
+import BasePagination from '@/components/ui/navigation/BasePagination.vue';
 
 const MOCK_ARTICLES = [
    { slug: 'vue3-guide', title: 'Mastering Vue 3 Composition API', description: 'Deep dive into setup, refs, and clean architecture.' },
@@ -88,6 +92,11 @@ const handleRetry = () => {
       pageState.value = 'content'
    }, 1500)
 }
+
+
+/* pagination */
+const currentPage = ref(2)
+
 </script>
 <style lang="sass">
 

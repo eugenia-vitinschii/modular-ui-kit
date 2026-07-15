@@ -1,5 +1,5 @@
 <template>
-   <button class="btn-icon" :class="[`btn-icon--${variant}`, `{'is-loading': loading}`]" :disabled="disabled"
+   <button class="btn-icon" :class="[`btn-icon--${variant}`, { 'is-loading': loading }]" :disabled="disabled"
       :type="type">
       <span class="btn-icon__content" v-if="!loading">
          <slot></slot>
