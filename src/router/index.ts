@@ -32,6 +32,11 @@ const routes: RouteRecordRaw[] = [
             name: 'ui-table',
             component: () => import('../views/TableView.vue'),
             meta: { title: "Table" },
+         }, {
+            path: 'feedback',
+            name: 'ui-feedback',
+            component: () => import('../views/FeedbackDemoView.vue'),
+            meta: { title: "Toast and Popup" },
          },
          {
             path: 'form',
