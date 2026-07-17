@@ -1,0 +1,56 @@
+/* ================= BASE TOAST =================  */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+.base-toast-container
+   position: fixed
+   top: 20px
+   right: 20px
+   z-index: 99999
+   pointer-events: none
+
+.base-toast
+   pointer-events: auto
+   position: relative
+   width: 300px
+   overflow: hidden
+   animation: fadeIn 0.25s ease
+   margin-top: 5px
+   padding: 10px
+   &__wrapper
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-direction: row
+      p
+         margin: 0
+         padding: 0
+   &__progress
+      position: absolute
+      pointer-events: none
+      bottom: 0
+      left: 0
+      height: 4px
+      background: rgba(255,255,255,0.7)
+      transition: width 0.1s linear
+
+//colors
+.base-toast--success
+   background: $success
+.base-toast--error
+   background: $danger
+.base-toast--warning
+   background: $warning
+.base-toast--info
+   background: $bg-card
+
+//animations
+.toast-enter-active, .toast-leave-active
+   transition: all 0.25s ease
+
+.toast-enter-from, .toast-leave-to
+   opacity: 0
+   transform: translateX(30px)
