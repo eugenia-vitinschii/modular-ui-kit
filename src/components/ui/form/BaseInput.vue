@@ -16,7 +16,7 @@ import { useId } from 'vue'
 const id = useId()
 
 /* INPUT TYPE */
-type InputType = "text" | "email" | "password" | "search" | "date" | "tel" | "number"
+import type { UIInputType } from '@/types/ui.types'
 
 /* PROPS */
 withDefaults(defineProps<{
@@ -26,7 +26,7 @@ withDefaults(defineProps<{
    hint?: string
    error?: string
    disabled?: boolean
-   type?: InputType
+   type?: UIInputType
 }>(), {
    type: 'text'
 })
