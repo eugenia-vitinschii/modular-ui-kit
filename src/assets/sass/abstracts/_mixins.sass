@@ -7,9 +7,9 @@
    font-size: $font-size
    line-height: $line-height
 
-@mixin font-style($color: $text, $spaceding-top: 0, $text-align: left)
+@mixin font-style($color: $text, $space-top: 0, $text-align: left)
    color: $color
-   padding-top: $spaceding-top
+   padding-top: $space-top
    text-align: $text-align
 
 /* === BORDER === */
@@ -18,12 +18,12 @@
    border-radius: $border-radius
 
 /* === BUTTONS ===*/
-@mixin button-size($height, $spaceding, $font-size)
+@mixin button-size($height, $padding-x, $font-size)
    height: $height
-   padding: 0 $spaceding
+   padding: 3px $padding-x
    font-size: $font-size
 
-@mixin button-variant($bg, $color, $border-color, $hover-bg: null)
+@mixin button-variant($border-color, $bg, $color, $hover-bg: null)
    @include border($border-color: $border-color, $border-radius: 10px)
    background: $bg
    color: $color
@@ -32,8 +32,14 @@
          background: $hover-bg
       @else 
          filter: brightness(1.1)
+   &:active:not(:disabled)
+      transform: scale(0.97) 
+      filter: brightness(0.9) 
    &:disabled
       opacity: 0.3
+      filter: grayscale(0.5)
+      cursor: not-allowed
+      transform: none
 
 /* === FORM ELEMENTS === */
 @mixin form-element($bg: $bg-soft)
@@ -64,6 +70,7 @@
 /* ===  UI ELEMNTS & BLOKS === */
 //for blocks  [forms, cards. sections,...]
 @mixin container($bg: $bg-card)
+   @include border()
    width: 100%
    background: $bg
    transition: $transition

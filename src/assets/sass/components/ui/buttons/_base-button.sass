@@ -1,28 +1,25 @@
 /* === BASE BUTTON === */
 
-//components/button
 @use '../../../abstracts/_variables' as *
 @use '../../../abstracts/_colors' as *
 @use '../../../abstracts/_mixins' as *
 
-
 .btn
-   display: flex
+   display: inline-flex
    align-items: center
    justify-content: center
-   border-radius: 12px
-   border-color: transparent
-   width: 200px
-   margin: 5px 5px 5px 0px
-   padding: 20px
-   transition: $transition
+   gap: 8px
    font-family: inherit
+   font-weight: 500
+   line-height: 1.2
+   user-select: none
+   white-space: nowrap
    cursor: pointer
-   &:disabled
-      opacity: $opacity
-      cursor: not-allowed
-
-/*=== SIZES ===*/
+   transition: $transition
+   outline: none
+   border: none
+   
+/*=== SIZES [height, padding-x, font size] ===*/
 .btn--sm
    @include button-size(38, 14px, 14px)
 .btn--md
@@ -30,18 +27,24 @@
 .btn--lg
    @include button-size(50, 18px, 16px)
 
-/*=== VARIANTS ===*/
+/*=== VARIANTS [border-color, bg, text color,  hover: bg] ===*/
 .btn--primary
-   @include button-variant($primary, $text,$primary,  $bg-card)
+   @include button-variant($primary, $bg-card, $text, $primary)
 
 .btn--secondary
-   @include button-variant( $bg-soft,$text, $bg-soft, $bg-card)
+    @include button-variant($text-muted, $bg-card, $text, $text-muted)
+
+.btn--success
+   @include button-variant($success, $bg-card, $text, $success)
+
+.btn--warning
+    @include button-variant($warning, $bg-card, $text, $warning)
 
 .btn--danger
-   @include button-variant($danger,$text,$danger,  $bg-card)
+    @include button-variant($danger, $bg-card, $text, $danger)
 
 .btn--ghost
-   @include button-variant( transparent, $text-muted, $border-color, $bg-soft)
+   @include button-variant($bg-soft, $bg-card, $text-muted)
 
 
 /*=== LOADING ===*/

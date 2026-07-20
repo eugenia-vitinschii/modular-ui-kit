@@ -10,15 +10,13 @@
 
 <script setup lang="ts">
 /* BUTTON TYPES */
-type ButtonVariant = "primary" | "secondary" | "danger" | "ghost"
-type ButtonSize = "sm" | "md" | "lg"
-type ButtonType = "button" | "submit" | "reset"
+import type { UIButtonType, UISize, UIButtonVariant } from '@/types/ui.types'
 
 /* PROPS INTERFACE*/
 interface Props {
-   variant?: ButtonVariant
-   size?: ButtonSize
-   type?: ButtonType
+   variant?: UIButtonVariant
+   size?: UISize
+   type?: UIButtonType
    loading?: boolean
    disabled?: boolean
 }
