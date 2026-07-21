@@ -7,13 +7,38 @@
             </div>
             <div class="page__content">
                <div class="demo-controls section">
-                  <h2 class="subheading">Demo Controls</h2>
+                  <h2 class="subheading">Demo Controls [Toast]</h2>
                   <div class="demo-controls__buttons">
                      <base-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">Show
                         {{ type }} toast</base-button>
                   </div>
                </div>
+               <div class="demo-controls section">
+                  <h2 class="subheading">Demo Controls [Modal/Popup]</h2>
+                  <div class="demo-controls__buttons">
+                     <base-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">Show
+                        {{ type }} modal</base-button>
+                  </div>
+               </div>
             </div>
+            <base-modal v-model:open="isModalOpen" :title="activeTitle" :variant="activeVariant">
+               <template #content>
+                  <p class="body-text">variant: {{ activeVariant }}</p>
+                  <base-input v-if="activeVariant === 'danger'" v-model="confirmText"
+                     placeholder="Type 'DELETE' to confirm" :error="inputError" />
+                  <base-checkbox v-if="activeVariant === 'warning'" v-model="isAgreed"
+                     label="I accept the risk and want to proceed" />
+               </template>
+               <template #actions>
+                  <base-button variant="secondary" @click="isModalOpen = false">
+                     cancel
+                  </base-button>
+                  <base-button :variant="activeVariant" @click="handleConfirm"
+                     :disabled="activeVariant === 'warning' && !isAgreed">
+                     confirm
+                  </base-button>
+               </template>
+            </base-modal>
          </div>
       </div>
    </div>
@@ -21,9 +46,13 @@
 
 <script setup lang="ts">
 /* VUE */
+import { ref } from 'vue';
 
 /* Components */
 import BaseButton from '@/components/ui/buttons/BaseButton.vue';
+import BaseInput from '@/components/ui/form/BaseInput.vue';
+import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
+import BaseModal from '@/components/ui/overlays/BaseModal.vue';
 
 import { useToast } from '@/components/ui/feedback/useToast';
 import type { UIVariant } from '@/types/ui.types'
@@ -55,11 +84,49 @@ function triggerToast(variant: UIVariant) {
 }
 
 /*======= POPUP DEMO ======= */
+// popup state
+const isModalOpen = ref(false)
+const activeVariant = ref<UIVariant>('success')
+const activeTitle = ref('')
+
+// form state
+const confirmText = ref('')
+const inputError = ref('')
+const isAgreed = ref(false)
+
+// open modal handler
+function openModal(variant: UIVariant) {
+   activeVariant.value = variant
+   activeTitle.value = `${variant.toUpperCase()} Action Required`
+
+   confirmText.value = ''
+   inputError.value = ''
+   isAgreed.value = false
+
+
+   isModalOpen.value = true
+}
+
+/* confirm action handler */
+function handleConfirm() {
+   if (activeVariant.value === 'danger' && confirmText.value !== 'DELETE') {
+      inputError.value = 'Please type DELETE exactly to confirm!'
+      return
+   }
+   const message = `Action confirmed for variant ${activeVariant.value}`
+   addToast(message, 'success', 3000)
+
+   isModalOpen.value = false
+}
+
 </script>
 
 <style lang="sass">
-.demo-controls__buttons
-   display: flex
-   align-items: center
+
+.demo-controls__buttons 
+   display: flex 
+   align-items: start
    justify-content: space-between
+   flex-direction: column
+   gap: 20px
 </style>
