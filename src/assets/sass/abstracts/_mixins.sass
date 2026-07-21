@@ -28,19 +28,20 @@
    background: $bg
    color: $color
    --spinner-color: #{$border-color}
-   &:hover:not(:disabled)
+   &:hover:not(:disabled):not(.is-loading)
       @if $hover-bg
          background: $hover-bg
       @else 
          filter: brightness(1.1)
-   &:active:not(:disabled)
+   &:active:not(:disabled):not(.is-loading)
       transform: scale(0.97) 
       filter: brightness(0.9) 
    &:disabled
-      opacity: 0.3
-      filter: grayscale(0.5)
       cursor: not-allowed
       transform: none
+      opacity: $opacity
+   &.is-loading
+      cursor: wait
 
 /* =============================== ICON BUTTON MIXINS =============================== */
 @mixin icon-button-size($size, $icon-size)
@@ -57,19 +58,21 @@
    background: $bg
    svg
       fill: currentColor 
-   &:hover:not(:disabled)
+   &:hover:not(:disabled):not(.is-loading)
       @if $hover-color
          color: $hover-color
       @else
          filter: brightness(1.2)
       @if $hover-bg != transparent
          background: $hover-bg
-   &:active:not(:disabled)
+   &:active:not(:disabled):not(.is-loading)
       transform: scale(0.92)
    &:disabled
       opacity: $opacity
       cursor: not-allowed
-
+      transform: none
+   &.is-loading
+      cursor: wait
 /* =============================== FORM ELEMENTS =============================== */
 @mixin form-element($bg: $bg-soft)
    @include border()

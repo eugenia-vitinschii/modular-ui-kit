@@ -1,9 +1,10 @@
 <template>
-   <button class="btn" :class="[`btn--${variant}`, `btn--${size}`, { 'is-loading': loading }]"
-      :disabled="disabled || loading" :type="type">
-      <span v-if="loading" class="btn-spinner"></span>
+   <button class="btn" :class="[`btn--${variant}`, `btn--${size}`, { 'is-loading': loading }]" :disabled="disabled"
+      :type="type">
       <span class="btn__content" v-if="!loading">
          <slot></slot>
+      </span>
+      <span class="btn-spinner" v-else>
       </span>
    </button>
 </template>
