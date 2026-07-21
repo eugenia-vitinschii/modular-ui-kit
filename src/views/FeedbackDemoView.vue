@@ -8,10 +8,10 @@
             <div class="page__content">
                <div class="demo-controls section">
                   <h2 class="subheading">Demo Controls</h2>
-                  <base-button @click="triggerToast('success')" variant="ghost">succes toast</base-button>
-                  <base-button @click="triggerToast('error')" variant="danger">error toast</base-button>
-                  <base-button @click="triggerToast('warning')" variant="primary">warning toast</base-button>
-                  <base-button @click="triggerToast('info')" variant="secondary">info toast</base-button>
+                  <div class="demo-controls__buttons">
+                     <base-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">Show
+                        {{ type }} toast</base-button>
+                  </div>
                </div>
             </div>
          </div>
@@ -20,25 +20,46 @@
 </template>
 
 <script setup lang="ts">
+/* VUE */
+
 /* Components */
 import BaseButton from '@/components/ui/buttons/BaseButton.vue';
 
-/* */
-import { useToast, type ToastType } from '@/components/ui/feedback/useToast';
+import { useToast } from '@/components/ui/feedback/useToast';
+import type { UIVariant } from '@/types/ui.types'
+
+/*======= TOAST DEMO ======= */
 
 const { addToast } = useToast()
 
+const variants: UIVariant[] = [
+   'primary',
+   'secondary',
+   'success',
+   'warning',
+   'danger',
+]
 // messages for demo
-const toastMessages: Record<ToastType, string> = {
-   success: 'Success! Everything went smoothly.',
-   error: 'Oops! Something went terribly wrong.',
-   warning: 'Warning! Please review your input files.',
-   info: 'Heads up! New updates are available.'
+const toastMessages: Record<UIVariant, string> = {
+   primary: 'New system updates are now available.',
+   secondary: 'Your draft has been saved automatically.',
+   success: 'Changes saved successfully!',
+   warning: 'Please review your entries before proceeding.',
+   danger: 'Something went wrong. Please try again.'
 }
 
 // trigger
-function triggerToast(type: ToastType) {
-   const message = toastMessages[type]
-   addToast(message, type, 3000)
+function triggerToast(variant: UIVariant) {
+   const message = toastMessages[variant]
+   addToast(message, variant, 3000)
 }
+
+/*======= POPUP DEMO ======= */
 </script>
+
+<style lang="sass">
+.demo-controls__buttons
+   display: flex
+   align-items: center
+   justify-content: space-between
+</style>
