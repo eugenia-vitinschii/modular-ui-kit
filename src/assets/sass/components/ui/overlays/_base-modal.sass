@@ -1,0 +1,64 @@
+/* === BASE MODAL === */
+   
+@use '../../../abstracts/_variables' as *
+@use '../../../abstracts/_colors' as *
+@use '../../../abstracts/_mixins' as *
+
+
+
+.base-modal-backdrop
+   position: fixed
+   top: 0
+   left: 0
+   width: 100vw
+   height: 100vh
+   background: rgba(0, 0, 0, 0.5) 
+   display: flex
+   align-items: center
+   justify-content: center
+   z-index: 10000 
+   pointer-events: auto
+
+.base-modal
+   @include border()
+   background: $bg-card 
+   width: 100%
+   max-width: 450px 
+   padding: 24px   
+   &__header
+      margin-bottom: 16px
+   &__content
+      margin-bottom: 24px
+      display: flex
+      flex-direction: column
+      gap: 16px
+   &__footer
+      display: flex
+      justify-content: flex-end
+      gap: 12px 
+
+/* === ANIMATION === */
+.modal-fade-enter-active, .modal-fade-leave-active
+   transition: opacity 0.25s ease
+   .base-modal
+      transition: transform 0.25s ease
+
+
+.modal-fade-enter-from, .modal-fade-leave-to
+   opacity: 0
+   .base-modal
+      transform: translateY(-20px)
+
+/* === VARIANTS === */
+.base-modal
+   &--primary
+      border-color: $primary
+   &--secondary
+      border-color: $text
+   &--success
+      border-color: $success
+   &--warning
+      border-color: $warning
+   &--danger
+      border-color: $danger
+
