@@ -16,42 +16,26 @@
    justify-content: center
    margin: 0
    padding: 0
-   min-height: 36px
-   min-width: 36px
-   &:disabled svg
-      opacity: $opacity
    svg
-      transition: $transition   
-      width: 20px
-      height: 20px
-   &:disabled
-      opacity: $opacity
-      cursor: not-allowed
-   &:hover:not(:disabled)
-      svg
-         opacity: $opacity
-   @media (max-width: 1024px)
-      min-height: 40px
-      min-width: 40px
-      svg
-         width: 22px
-         height: 22px
-   @media (max-width: 767px)
-      min-height:44px
-      min-width: 44px
-      svg
-         width: 24px
-         height: 24px
-   &--danger
-      svg
-         fill: $danger
+      transition: $transition
+   &--sm
+      @include icon-button-size(32px, 18px)
+      --spinner-size: 14px
+   &--md
+      @include icon-button-size(40px, 22px)
+      --spinner-size: 18px
+   &--lg
+      @include icon-button-size(48px, 26px)
+      --spinner-size: 22px
+   &--primary
+      @include icon-button-variant($primary, $primary-hover)
+   &--secondary
+      @include icon-button-variant($text, $primary-hover)
    &--success
-      svg
-         fill: $success
-   &--default
-      svg
-         fill: $text
-      &:hover:not(:disabled)
-         svg
-            fill: $primary-hover
-            opacity: 1
+      @include icon-button-variant($success)
+   &--warning
+      @include icon-button-variant($warning)
+   &--danger
+      @include icon-button-variant($danger)
+   &--ghost
+      @include icon-button-variant($text-muted, $text)

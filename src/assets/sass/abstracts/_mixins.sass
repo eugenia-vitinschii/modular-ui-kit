@@ -2,7 +2,7 @@
 @use '../abstracts/variables' as *
 @use '../abstracts/colors' as *
 
-/* === fonts === */
+/*  =============================== FONTS =============================== */
 @mixin font-size($font-size, $line-height)
    font-size: $font-size
    line-height: $line-height
@@ -12,12 +12,12 @@
    padding-top: $space-top
    text-align: $text-align
 
-/* === BORDER === */
+/* =============================== BORDER =============================== */
 @mixin border( $border-width:$border-width,  $border-style: $border-style, $border-color: $bg, $border-radius: $border-radius)
    border: $border-width $border-style $border-color
    border-radius: $border-radius
 
-/* === BUTTONS ===*/
+/* =============================== BUTTONS =============================== */
 @mixin button-size($height, $padding-x, $font-size)
    height: $height
    padding: 3px $padding-x
@@ -27,6 +27,7 @@
    @include border($border-color: $border-color, $border-radius: 10px)
    background: $bg
    color: $color
+   --spinner-color: #{$border-color}
    &:hover:not(:disabled)
       @if $hover-bg
          background: $hover-bg
@@ -41,7 +42,35 @@
       cursor: not-allowed
       transform: none
 
-/* === FORM ELEMENTS === */
+/* =============================== ICON BUTTON MIXINS =============================== */
+@mixin icon-button-size($size, $icon-size)
+   width: $size
+   height: $size
+   min-width: $size
+   min-height: $size
+   svg
+      width: $icon-size
+      height: $icon-size
+
+@mixin icon-button-variant($color, $hover-color: null, $bg: transparent, $hover-bg: transparent)
+   color: $color
+   background: $bg
+   svg
+      fill: currentColor 
+   &:hover:not(:disabled)
+      @if $hover-color
+         color: $hover-color
+      @else
+         filter: brightness(1.2)
+      @if $hover-bg != transparent
+         background: $hover-bg
+   &:active:not(:disabled)
+      transform: scale(0.92)
+   &:disabled
+      opacity: $opacity
+      cursor: not-allowed
+
+/* =============================== FORM ELEMENTS =============================== */
 @mixin form-element($bg: $bg-soft)
    @include border()
    background: $bg
@@ -67,8 +96,10 @@
    color: $color
 
 
-/* ===  UI ELEMNTS & BLOKS === */
+/* =============================== UI ELEMNTS & BLOKS =============================== */
+
 //for blocks  [forms, cards. sections,...]
+   
 @mixin container($bg: $bg-card)
    @include border()
    width: 100%
@@ -98,7 +129,7 @@
       margin: $space-content-sm 0px
 
 
-/*=== SKELETONS ===*/
+/* =============================== SKELETONS =============================== */
 @mixin skeleton-color()
    background: $bg
    opacity: $opacity
