@@ -12,16 +12,16 @@
 
 <script setup lang="ts">
 /* VARIANTS */
-type Variant = 'default' | 'accent'
+import type { UIEmptyStateVariant } from '@/types/ui.types'
 
 withDefaults(
    defineProps<{
       title?: string
       description?: string
-      variant?: Variant
+      variant?: UIEmptyStateVariant
    }>(),
    {
-      variant: 'default',
+      variant: 'secondary',
       title: "No data available",
       description: 'There is nothing to display here at the moment. Please try refreshing the page',
    }

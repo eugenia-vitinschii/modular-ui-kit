@@ -32,7 +32,7 @@
                         </div>
                      </div>
                      <div class="demo-info" v-else key="empty">
-                        <empty-state variant="accent" class="section__item">
+                        <empty-state variant="primary" class="section__item">
                         </empty-state>
                         <empty-state class="section__item">
                            <template #action>
