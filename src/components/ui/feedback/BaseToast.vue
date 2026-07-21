@@ -1,10 +1,10 @@
 <template>
-   <div class="base-toast" :class="`base-toast--${toast.type}`" @mouseenter="pause" @mouseleave="resume">
+   <div class="base-toast" :class="`base-toast--${toast.variant}`" @mouseenter="pause" @mouseleave="resume">
       <div class="base-toast__wrapper">
          <div class="base-toast__message">
             <p class="body-text">{{ toast.message }}</p>
          </div>
-         <base-icon-button @click="remove">
+         <base-icon-button @click="remove" :variant="toast.variant">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                <path
                   d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />

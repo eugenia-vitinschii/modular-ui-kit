@@ -13,6 +13,8 @@
    pointer-events: none
 
 .base-toast
+   @include border()
+   background: $bg
    pointer-events: auto
    position: relative
    width: 300px
@@ -37,15 +39,18 @@
       background: rgba(255,255,255,0.7)
       transition: width 0.1s linear
 
-//colors
-.base-toast--success
-   background: $success
-.base-toast--error
-   background: $danger
-.base-toast--warning
-   background: $warning
-.base-toast--info
-   background: $bg-card
+/* VARIANTS */
+.base-toast
+   &--primary
+      border-color: $primary
+   &--secondary
+      border-color: $text
+   &--success
+      border-color: $success
+   &--warning
+      border-color: $warning
+   &--danger
+      border-color: $danger
 
 //animations
 .toast-enter-active, .toast-leave-active

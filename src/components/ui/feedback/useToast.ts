@@ -3,13 +3,13 @@
 import { ref } from "vue";
 
 /* toast type */
-export type ToastType = 'success' | "error" | "info" | "warning"
+import type { UIVariant } from '@/types/ui.types'
 
 /* toast interface */
 export interface Toast {
    id: string
    message: string
-   type: ToastType
+   variant: UIVariant
    duration: number
 }
 
@@ -20,11 +20,11 @@ export function useToast() {
    //create toast
    const addToast = (
       message: string,
-      type: ToastType = 'info',
+      variant: UIVariant = 'secondary',
       duration: number = 3000
    ) => {
       const id = Date.now().toString() + Math.random().toString().slice(2, 6)
-      toasts.value.push({ id, message, type, duration })
+      toasts.value.push({ id, message, variant, duration })
    }
    //remove toast
    const removeToast = (id: string) => {
