@@ -3,27 +3,29 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Toast & Modals Preview</h1>
+               <base-text as="h1" :type="'heading'">Toast & Modal Preview</base-text>
             </div>
             <div class="page__content">
                <div class="demo-controls section">
-                  <h2 class="subheading">Demo Controls [Toast]</h2>
+                  <base-text as="h2" :type="'subheading'">Demo Controls [Toast]</base-text>
                   <div class="demo-controls__buttons">
-                     <base-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">Show
-                        {{ type }} toast</base-button>
+                     <base-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">
+                        Show {{ type }} toast
+                     </base-button>
                   </div>
                </div>
                <div class="demo-controls section">
-                  <h2 class="subheading">Demo Controls [Modal/Popup]</h2>
+                  <base-text as="h3" :type="'subheading'">Demo Controls [Modal]</base-text>
                   <div class="demo-controls__buttons">
-                     <base-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">Show
-                        {{ type }} modal</base-button>
+                     <base-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">
+                        Show {{ type }} modal
+                     </base-button>
                   </div>
                </div>
             </div>
             <base-modal v-model:open="isModalOpen" :title="activeTitle" :variant="activeVariant">
                <template #content>
-                  <p class="body-text">variant: {{ activeVariant }}</p>
+                  <base-text>variant: {{ activeVariant }}</base-text>
                   <base-input v-if="activeVariant === 'danger'" v-model="confirmText"
                      placeholder="Type 'DELETE' to confirm" :error="inputError" />
                   <base-checkbox v-if="activeVariant === 'warning'" v-model="isAgreed"
@@ -53,6 +55,7 @@ import BaseButton from '@/components/ui/buttons/BaseButton.vue';
 import BaseInput from '@/components/ui/form/BaseInput.vue';
 import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
 import BaseModal from '@/components/ui/overlays/BaseModal.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
 import { useToast } from '@/components/ui/feedback/useToast';
 import type { UIVariant } from '@/types/ui.types'

@@ -2,7 +2,7 @@
    <div class="base-toast" :class="`base-toast--${toast.variant}`" @mouseenter="pause" @mouseleave="resume">
       <div class="base-toast__wrapper">
          <div class="base-toast__message">
-            <p class="body-text">{{ toast.message }}</p>
+            <base-text type="body-text" :variant="toast.variant">{{ toast.message }}</base-text>
          </div>
          <base-icon-button @click="remove" :variant="toast.variant">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
@@ -21,6 +21,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 
 /* Components */
 import BaseIconButton from '../buttons/BaseIconButton.vue';
+import BaseText from '../typography/BaseText.vue';
 
 /* shared state */
 import { useToast, type Toast } from './useToast.ts'

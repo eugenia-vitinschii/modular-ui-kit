@@ -4,7 +4,7 @@
          <div class="base-modal-backdrop" v-if="open" @click="close">
             <div class="base-modal" :class="`base-modal--${variant}`" @click.stop>
                <div class="base-modal__header" v-if="title">
-                  <h6 class="subheading" v-if="title">{{ title }}</h6>
+                  <base-text type="subheading" :variant="variant">{{ title }}</base-text>
                </div>
                <div class="base-modal__content">
                   <slot name="content"></slot>
@@ -19,6 +19,9 @@
 </template>
 
 <script setup lang="ts">
+/* VUE */
+import BaseText from '../typography/BaseText.vue';
+
 /* VUE */
 import { Teleport, Transition } from 'vue';
 
