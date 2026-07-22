@@ -3,11 +3,11 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Textarea Preview</h1>
+               <base-text as="h1" :type="'heading'">Textarea Preview</base-text>
             </div>
             <div class="page__content">
                <div class="form section">
-                  <p class="subheading">Textarea</p>
+                  <base-text as="h2" :type="'subheading'">Textarea</base-text>
                   <div class="form__item">
                      <base-textarea v-model="biography"
                         placeholder="Tell us about yourself, your skills, and your professional background..."
@@ -36,8 +36,9 @@ import { ref } from 'vue';
 
 /* COMPONENTS */
 import BaseTextarea from '@/components/ui/form/BaseTextarea.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
-
+/* state */
 const biography = ref('')
 const orderComment = ref('Please deliver the package between 6 PM and 8 PM. If I am not at home, please leave it with my neighbor from apartment 42. Also, make sure to call me 10 minutes before arrival. Thank you so much for your help!')
 const systemNotes = ref('CONTAINER_ID: 9f82b3c1\nSTATUS: Active\nLAST_DEPLOY: 2026-07-02 12:44:12\nREGION: eu-central-1\nNo manual overrides allowed.')

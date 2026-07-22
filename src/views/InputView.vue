@@ -3,11 +3,11 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Input preview</h1>
+               <base-text as="h1" :type="'heading'">Input preview</base-text>
             </div>
             <div class="page__content">
                <div class="form section">
-                  <p class="subheading">Input</p>
+                  <base-text as="h2" :type="'subheading'">Input</base-text>
                   <div class="form__item">
                      <base-input v-model="textValue" label="*Name" placeholder="Enter your username..." />
                      <!-- <p class="body-text" v-if="textValue">Current value: <strong>{{ textValue }}</strong> </p> -->
@@ -39,8 +39,9 @@ import { ref, computed } from 'vue'
 
 /* COMPONENTS */
 import BaseInput from '@/components/ui/form/BaseInput.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
-/* variables for v-model */
+/* vstate */
 const textValue = ref('')
 const emailValue = ref('')
 const passwordValue = ref('')
@@ -52,8 +53,6 @@ const emailError = computed(() => {
    if (!emailValue.value) return ''
    return emailValue.value.includes('@') ? '' : 'Invalid email'
 })
-
-
 
 
 

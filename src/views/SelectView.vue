@@ -3,11 +3,11 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Checkbox Preview</h1>
+               <base-text as="h1" :type="'heading'">Select Preview</base-text>
             </div>
             <div class="page__content">
                <div class="form section">
-                  <p class="subheading">Select</p>
+                  <base-text as="h2" :type="'subheading'">Select</base-text>
                   <div class="form__item">
                      <base-select v-model="selectedCountry" :options="countries" placeholder="Select country..."
                         label="Your Country" />
@@ -33,8 +33,9 @@ import { ref } from 'vue'
 
 /* COMPONENTS */
 import BaseSelect from '@/components/ui/form/BaseSelect.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
-//select
+/* state */
 const selectedCountry = ref('')
 const countries = [
    { value: 'usa', label: 'United States' },

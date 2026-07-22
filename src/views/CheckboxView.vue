@@ -3,11 +3,11 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Checkbox Preview</h1>
+               <base-text as="h1" :type="'heading'">Checkbox Preview</base-text>
             </div>
             <div class="page__content">
                <div class="form section">
-                  <p class="subheading">Checkbox</p>
+                  <base-text as="h2" :type="'subheading'">Checkbox</base-text>
                   <div class="form__item">
                      <base-checkbox v-model="baseValue" label="Remember me" />
                   </div>
@@ -38,8 +38,9 @@ import { ref } from 'vue';
 
 /* COMPONENTS */
 import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
-
+/* state */
 const baseValue = ref(true)
 const hintValue = ref(false)
 const errorValue = ref(false)
