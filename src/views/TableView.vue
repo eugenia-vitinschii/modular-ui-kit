@@ -3,14 +3,14 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Table View</h1>
+               <base-text as="h1" :type="'heading'">Table Preview</base-text>
             </div>
             <div class="page__content section">
-               <p class="subheading">Base table</p>
+               <base-text as="h2" :type="'subheading'">Table</base-text>
                <div class="base-table-wrapper section__item">
                   <base-table :columns="TABLE_COLUMNS" :data="MOCK_DATA" />
                </div>
-               <p class="subheading">Base table with actions</p>
+               <base-text as="h3" :type="'subheading'">Table with actions</base-text>
                <div class="base-table-wrapper section__item">
                   <base-table :columns="TABLE_COLUMNS" :data="MOCK_DATA">
                      <template #tableActions="{ row }">
@@ -27,9 +27,12 @@
 </template>
 
 <script setup lang="ts">
+/* COMPONENTS */
+import BaseText from '@/components/ui/typography/BaseText.vue';
 import BaseTable from '@/components/ui/data-display/BaseTable.vue';
 import BaseButton from '@/components/ui/buttons/BaseButton.vue';
 
+/* state */
 const TABLE_COLUMNS = [
    { key: 'id', title: 'ID' },
    { key: 'title', title: 'Project Name' },

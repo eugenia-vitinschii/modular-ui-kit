@@ -2,14 +2,18 @@
    <table class="base-table">
       <thead>
          <tr>
-            <th v-for="c in columns" :key="c.key" class="body-text">{{ c.title }}</th>
-            <th v-if="$slots.tableActions" class="body-text">Actions</th>
+            <th v-for="c in columns" :key="c.key">
+               <base-text>{{ c.title }}</base-text>
+            </th>
+            <th v-if="$slots.tableActions">
+               <base-text>Actions</base-text>
+            </th>
          </tr>
       </thead>
       <tbody>
          <tr v-for="row in data" :key="row.id">
-            <td v-for="c in columns" :key="c.key" class="body-text">
-               {{ row[c.key] }}
+            <td v-for="c in columns" :key="c.key">
+               <base-text> {{ row[c.key] }}</base-text>
             </td>
             <td v-if="$slots.tableActions">
                <div class="base-table__actions">
@@ -22,6 +26,8 @@
 </template>
 
 <script setup lang="ts">
+/* COMPONENTS */
+import BaseText from '../typography/BaseText.vue';
 
 export interface TableColumn {
    key: string
