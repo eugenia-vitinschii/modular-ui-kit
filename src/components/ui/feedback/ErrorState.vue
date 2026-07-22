@@ -1,16 +1,18 @@
 <template>
    <div class="error-state">
       <div class="error-state__text">
-         <h3 class="subheading">{{ title }}</h3>
-         <p class="body-text">{{ description }}</p>
+         <base-text type="subheading" as="h3" :align="'center'" variant="danger">{{ title }}</base-text>
+         <base-text type="body-text" :align="'center'">{{ description }}</base-text>
       </div>
       <div class="error-state__action">
-         <slot name="error-action"></slot>
+         <slot name="action"></slot>
       </div>
    </div>
 </template>
 
 <script setup lang="ts">
+/* COMPONENTS */
+import BaseText from '../typography/BaseText.vue';
 
 /* PROPS */
 const props = withDefaults(

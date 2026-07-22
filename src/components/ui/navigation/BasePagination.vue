@@ -7,7 +7,7 @@
       </base-icon-button>
       <base-icon-button v-for="i in pages" :key="i + ''" :disabled="i === '...'" :class="{ 'is-active': i === page }"
          @click="typeof i === 'number' && $emit('change', i)">
-         <p class="body-text">{{ i }}</p>
+         <base-text>{{ i }}</base-text>
       </base-icon-button>
       <base-icon-button :disabled="page === totalPages" @click="$emit('change', page + 1)">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
@@ -23,6 +23,7 @@ import { computed } from 'vue';
 
 /* COMPONENTS */
 import BaseIconButton from '../buttons/BaseIconButton.vue';
+import BaseText from '../typography/BaseText.vue';
 
 /* PROPS */
 const props = defineProps<{

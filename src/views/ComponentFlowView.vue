@@ -3,11 +3,11 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Component Flow Preview</h1>
+               <base-text as="h1" :type="'heading'">Component Flow Preview</base-text>
             </div>
             <div class="page__content">
                <div class="demo-controls section">
-                  <h2 class="subheading">Demo Controls</h2>
+                  <base-text as="h2" :type="'subheading'">Demo Controls</base-text>
                   <base-radio v-model="pageState" value="content" label="Show Content" name="page-flow-state" />
                   <base-radio v-model="pageState" value="loading" label="Loading (Skeleton)" name="page-flow-state" />
                   <base-radio v-model="pageState" value="error" label="Error State" name="page-flow-state" />
@@ -20,15 +20,15 @@
                      </div>
                      <div class="demo-info section__item" v-else-if="hasError" key="error">
                         <error-state>
-                           <template #error-action>
+                           <template #action>
                               <base-button @click="handleRetry" variant="ghost">Try again</base-button>
                            </template>
                         </error-state>
                      </div>
                      <div class="demo-content section__item article-items" v-else-if="hasArticles" key="articles">
                         <div class="article section__item" v-for="article in articles" :key="article.slug">
-                           <h3 class="subheading">{{ article.title }}</h3>
-                           <p class="body-text">{{ article.description }}</p>
+                           <base-text as="h3" :type="'subheading'">{{ article.title }}</base-text>
+                           <base-text>{{ article.description }}</base-text>
                         </div>
                      </div>
                      <div class="demo-info" v-else key="empty">
@@ -64,6 +64,7 @@ import ErrorState from '@/components/ui/feedback/ErrorState.vue';
 import BaseButton from '@/components/ui/buttons/BaseButton.vue';
 import BaseSkeleton from '@/components/ui/feedback/BaseSkeleton.vue';
 import BasePagination from '@/components/ui/navigation/BasePagination.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
 const MOCK_ARTICLES = [
    { slug: 'vue3-guide', title: 'Mastering Vue 3 Composition API', description: 'Deep dive into setup, refs, and clean architecture.' },
@@ -92,7 +93,6 @@ const handleRetry = () => {
       pageState.value = 'content'
    }, 1500)
 }
-
 
 /* pagination */
 const currentPage = ref(2)

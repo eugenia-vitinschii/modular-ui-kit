@@ -1,8 +1,8 @@
 <template>
    <div class="empty-state" :class="`empty-state--${variant}`">
       <div class="empty-state__text">
-         <h3 class="subheading">{{ title }}</h3>
-         <p class="body-text">{{ description }}</p>
+         <base-text type="subheading" as="h3">{{ title }}</base-text>
+         <base-text type="body-text">{{ description }}</base-text>
       </div>
       <div class="empty-state__actions">
          <slot name="action"></slot>
@@ -11,9 +11,13 @@
 </template>
 
 <script setup lang="ts">
+/* COMPONENTS */
+import BaseText from '../typography/BaseText.vue';
+
 /* VARIANTS */
 import type { UIEmptyStateVariant } from '@/types/ui.types'
 
+/* PROPS */
 withDefaults(
    defineProps<{
       title?: string

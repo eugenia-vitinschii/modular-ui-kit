@@ -6,10 +6,10 @@
                   <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
                </svg></base-icon-button>
             <li class="base-breadcrumbs__item" v-for="(crumb, index) in breadcrumbs" :key="index">
-               <span v-if="index === breadcrumbs.length - 1" class="body-text">{{ crumb.label }}</span>
+               <base-text as="span" v-if="index === breadcrumbs.length - 1">{{ crumb.label }}</base-text>
                <template v-else>
-                  <router-link :to="crumb.to" class="body-text"> {{ crumb.label }}</router-link>
-                  <span class="body-text base-breadcrumbs__item-separator">/</span>
+                  <base-text as="router-link" :to="crumb.to" :align="'center'"> {{ crumb.label }}</base-text>
+                  <base-text as="span" class="base-breadcrumbs__item-separator">/</base-text>
                </template>
             </li>
          </ul>
@@ -19,17 +19,16 @@
 </template>
 
 <script setup lang="ts">
-
 /* VUE & ROUTER */
 import { computed } from "vue"
 import { useRoute, useRouter } from "vue-router"
 
 /* COMPONENTS */
 import BaseIconButton from "../buttons/BaseIconButton.vue"
+import BaseText from "../typography/BaseText.vue"
 
 const route = useRoute()
 const router = useRouter()
-
 
 const breadcrumbs = computed(() => {
    const matched = route.matched.filter(r => r.meta && r.meta.title)
