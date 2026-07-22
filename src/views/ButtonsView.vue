@@ -3,25 +3,25 @@
       <div class="container">
          <div class="page__wrapper">
             <div class="page__header">
-               <h1 class="heading">Buttons Preview [Icon & Basic]</h1>
+               <base-text as="h1" :type="'heading'">Buttons Preview [Icon & Basic]</base-text>
             </div>
             <div class="page__content">
                <div class="demo-controls section">
-                  <h2 class="subheading">Demo Controls</h2>
+                  <base-text as="h2" :type="'subheading'">Demo Controls</base-text>
                   <base-radio value="normal" v-model="buttonState" name="buttons-demo" label="Normal type" />
                   <base-radio value="loading" v-model="buttonState" name="buttons-demo" label="Loading" />
                   <base-radio value="disabled" v-model="buttonState" name="buttons-demo" label="Disabled" />
                </div>
                <div class="section">
-                  <p class="subheading">Basic buttons</p>
+                  <base-text :type="'subheading'">Basic buttons</base-text>
                   <div class="buttons-grid">
                      <div class="button-card" v-for="variant in variants" :key="variant">
                         <div class="button-card__header">
-                           <p class="body-text">{{ variant }}</p>
+                           <base-text>{{ variant }}</base-text>
                         </div>
                         <div class="button-card__sizes">
                            <div class="button-card-row" v-for="size in sizes" :key="size">
-                              <p class="body-text">{{ size }}</p>
+                              <base-text>{{ size }}</base-text>
                               <base-button :variant="variant" :size="size" :loading="buttonState === 'loading'"
                                  :disabled="buttonState === 'disabled'">
                                  {{ variant }}</base-button>
@@ -30,12 +30,12 @@
                      </div>
                   </div>
                </div>
-               <div class=" section">
-                  <p class="subheading">Icon buttons</p>
+               <div class="section">
+                  <base-text as="h3" :type="'subheading'">Icon buttons</base-text>
                   <div class="buttons-grid">
                      <div class="button-card" v-for="variant in variants" :key="variant">
                         <div class="button-card__header">
-                           <p class="body-text">{{ variant }}</p>
+                           <base-text>{{ variant }}</base-text>
                         </div>
                         <div class="button-card__sizes">
                            <div class="button-card-row" v-for="size in sizes" :key="size">
@@ -65,6 +65,7 @@ import { ref } from 'vue'
 import BaseButton from '@/components/ui/buttons/BaseButton.vue';
 import BaseIconButton from '@/components/ui/buttons/BaseIconButton.vue';
 import BaseRadio from '@/components/ui/form/BaseRadio.vue';
+import BaseText from '@/components/ui/typography/BaseText.vue';
 
 /* TYPES */
 import type { UIButtonVariant, UISize } from '@/types/ui.types';
