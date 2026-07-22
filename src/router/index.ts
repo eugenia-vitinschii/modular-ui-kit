@@ -16,6 +16,12 @@ const routes: RouteRecordRaw[] = [
       name: 'ui-kit',
       children: [
          {
+            path: 'text',
+            name: 'ui-text',
+            component: () => import('../views/TextView.vue'),
+            meta: { title: "Text" },
+         },
+         {
             path: 'buttons',
             name: 'ui-buttons',
             component: () => import('../views/ButtonsView.vue'),
