@@ -3,45 +3,35 @@
       <div class="container">
          <div class="header__wrapper">
             <div class="header__logo">
-               <span class="body-text">[Modular UI Kit]</span>
+               <base-text :varinat="'primary'">[Modular UI Kit]</base-text>
             </div>
             <nav class="header__nav">
                <ul>
-                  <li>
-                     <router-link to="/ui/buttons" class="body-text"> buttons</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/form/inputs" class="body-text">input</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/form/selects" class="body-text">select</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/form/textareas" class="body-text">textarea</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/form/checkboxes" class="body-text">checkbox</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/form/radio" class="body-text">radio</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/flow" class="body-text">component flow</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/feedback" class="body-text">toast & popup</router-link>
-                  </li>
-                  <li>
-                     <router-link to="/ui/table" class="body-text">table</router-link>
+                  <li v-for="item in navItems" :key="item.path">
+                     <base-text as="router-link" :to="item.path">{{ item.label }}</base-text>
                   </li>
                </ul>
             </nav>
-
          </div>
       </div>
    </header>
 </template>
 
 <script setup lang="ts">
+/* COMPONENTS */
+import BaseText from '@/components/ui/typography/BaseText.vue';
+
+const navItems = [
+   { label: 'Text', path: '/ui/text' },
+   { label: 'Buttons', path: '/ui/buttons' },
+   { label: 'Input', path: '/ui/form/inputs' },
+   { label: 'Select', path: '/ui/form/selects' },
+   { label: 'Textarea', path: '/ui/form/textareas' },
+   { label: 'Checkbox', path: '/ui/form/checkboxes' },
+   { label: 'Radio', path: '/ui/form/radio' },
+   { label: 'Component Flow', path: '/ui/flow' },
+   { label: 'Toast & Popup', path: '/ui/feedback' },
+   { label: 'Table', path: '/ui/table' },
+]
 
 </script>
