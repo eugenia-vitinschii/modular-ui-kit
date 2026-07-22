@@ -3,21 +3,17 @@
 @use '../abstracts/mixins' as *
 @use '../abstracts/variables' as *
 @use '../abstracts/colors' as *
-a
-   transition: $transition
+
 /* === font sizes === */
 .heading
-   @include font-style($text, 10px, left)
    @include font-size($heading, 34px)
    font-weight: 600
 
 .subheading
-   @include font-style($text, 10px, left)
    @include font-size($subheading, 28px)
    font-weight: 500 
 
 .body-text
-   @include font-style($text, 10px, left)
    @include font-size($body-text, 24px)
    font-weight: 400
 
@@ -39,3 +35,13 @@ a
       @include font-size($subheading-sm, 22px)
    .body-text
       @include font-size($body-text-sm, 20px)
+
+a
+   transition: $transition
+   text-underline-offset: 4px  
+   &:hover
+      opacity: 0.8
+      //filter: brightness(1.15) 
+   &:active
+      opacity: 0.6
+      filter: brightness(0.9)
