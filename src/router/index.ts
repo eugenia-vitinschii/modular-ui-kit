@@ -1,8 +1,10 @@
 
-
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw } from "vue-router";
 
+
+/* ERROR ROUTES*/
+import { errorRoutes } from '@/modules/errors/routes/error.routes.ts';
 
 const routes: RouteRecordRaw[] = [
    {
@@ -83,7 +85,8 @@ const routes: RouteRecordRaw[] = [
          },
 
       ]
-   }
+   },
+   ...errorRoutes,
 ]
 
 const router = createRouter({
