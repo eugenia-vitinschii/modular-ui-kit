@@ -10,6 +10,7 @@
       <div class="content">
         <base-breadcrumbs />
         <router-view />
+        <demo-widget />
         <base-toast-container />
       </div>
       <app-footer />
@@ -26,6 +27,9 @@ import AppHeader from './widgets/AppHeader.vue';
 import AppFooter from './widgets/AppFooter.vue';
 import BaseBreadcrumbs from './components/ui/navigation/BaseBreadcrumbs.vue';
 import BaseToastContainer from './components/ui/feedback/BaseToastContainer.vue';
+
+/* === DEMO === */
+import DemoWidget from './modules/demo/components/DemoWidget.vue';
 
 const route = useRoute()
 </script>
