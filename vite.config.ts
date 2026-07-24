@@ -19,4 +19,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  css: {
+    preprocessorOptions: {
+      sass: {
+        additionalData: `@use "@/assets/sass/abstracts/_index.sass" as *\n`
+      }
+    }
+  }
 })
