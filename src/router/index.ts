@@ -11,10 +11,14 @@ import { errorRoutes } from '@/modules/errors/routes/error.routes.ts';
 /* === LANDING ROUTES === */
 import { landingRoutes } from '@/modules/landing/routes/landing.routes';
 
+/* === LANDING ROUTES === */
+import { authRoutes } from '@/modules/auth/routes/auth.routes';
+
 const routes: RouteRecordRaw[] = [
    ...demoRoutes,
    ...errorRoutes,
    ...landingRoutes,
+   ...authRoutes,
 ]
 
 const router = createRouter({
