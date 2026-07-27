@@ -14,7 +14,7 @@
 .form-label
    @include form-text(13px, $text-muted)
    &--top
-      margin: 0 0 10px 0
+      margin: 0px 0 10px 0
    &--side
       margin: 10px
       
@@ -22,3 +22,10 @@
 .form
    &__item
       @include  content()
+   &__actions
+      @include  content()
+      display: flex
+      align-items: center
+      justify-content: start
+      flex-direction: row
+      gap: 10px
