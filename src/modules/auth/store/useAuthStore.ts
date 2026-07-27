@@ -5,15 +5,20 @@ import { ref, computed } from 'vue'
 import { authApi } from "../api/auth.api";
 //types
 import type { LoginPayload, RegisterPayload, User } from "../types";
-import { errorRoutes } from "@/modules/errors/routes/error.routes";
 
 
 export const useAuthStore = defineStore("auth", () => {
    const user = ref<User | null>(null)
    const token = ref<string | null>(null)
 
-   const isAuthenticated = computed(() => !!token.value)
+   const isLoading = ref(false)
+   const error = ref<string | null>(null)
 
+   const isAuthenticated = computed(() => !!token.value && token.value !== 'null')
+
+   function clearError() {
+      error.value = null
+   }
    /* === AUTO LOGIN === */
    const savedUser = localStorage.getItem('user');
    const savedToken = localStorage.getItem('token');
@@ -31,6 +36,9 @@ export const useAuthStore = defineStore("auth", () => {
 
    /* === LOGIN === */
    async function login(credentials: LoginPayload) {
+      isLoading.value = true
+      error.value = null
+
       try {
          const { data } = await authApi.login(credentials)
 
@@ -41,13 +49,15 @@ export const useAuthStore = defineStore("auth", () => {
          localStorage.setItem("token", data.token);
 
          return true
-      } catch (error) {
-         console.error("LOGIN FAILED:", error)
+      } catch (err: any) {
+         error.value = err?.response?.data?.message || "Failed to log in. Please check your credentials.";
          return false
       }
    }
    /* === REGISTER === */
    async function register(credentials: RegisterPayload) {
+      isLoading.value = true
+      error.value = null
       try {
          const { data } = await authApi.register(credentials)
 
@@ -58,8 +68,8 @@ export const useAuthStore = defineStore("auth", () => {
          localStorage.setItem("token", data.token);
 
          return true
-      } catch (error) {
-         console.error("LOGIN FAILED:", error)
+      } catch (err: any) {
+         error.value = err?.response?.data?.message || "Failed to log in. Please check your credentials.";
          return false
       }
    }
@@ -77,11 +87,14 @@ export const useAuthStore = defineStore("auth", () => {
       //state
       user,
       token,
+      isLoading,
+      error,
       isAuthenticated,
       //actions
       login,
       register,
       logout,
+      clearError,
    }
 
 })
