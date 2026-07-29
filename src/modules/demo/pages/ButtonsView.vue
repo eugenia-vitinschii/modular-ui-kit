@@ -90,10 +90,9 @@ const sizes: UISize[] = ['sm', 'md', 'lg']
 </script>
 
 <style lang="sass">
-
 .buttons-grid
    display: grid
-   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
    gap: 10px
 
 .button-card
@@ -103,4 +102,6 @@ const sizes: UISize[] = ['sm', 'md', 'lg']
    display: flex
    align-items: center
    justify-content: space-between
+   overflow: scroll
+
 </style>

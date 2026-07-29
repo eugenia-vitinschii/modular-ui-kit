@@ -80,4 +80,5 @@ const selectedAlign = ref<UITextAlign>('left')
    align-items: center
    justify-content: start
    flex-direction: row
+   flex-wrap: wrap
 </style>
