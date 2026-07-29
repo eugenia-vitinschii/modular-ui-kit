@@ -4,7 +4,8 @@
          {{ label }}
       </label>
       <input class="base-input__control" :class="{ 'is-error': !!error }" :id="id" :type="type"
-         :placeholder="placeholder" :disabled="disabled" :value="modelValue" @input="onInput" :aria-invalid="!!error"
+         :placeholder="placeholder" :disabled="disabled" :value="modelValue" :autocomplete="autocomplete"
+         @input="onInput" :aria-invalid="!!error"
          :aria-describedby="error ? `${id}-error` : hint ? `${id}-hint` : undefined">
       <p class="form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
       <p class="form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
@@ -28,6 +29,7 @@ withDefaults(defineProps<{
    error?: string
    disabled?: boolean
    type?: UIInputType
+   autocomplete?: string
 }>(), {
    type: 'text'
 })

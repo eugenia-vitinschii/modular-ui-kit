@@ -1,6 +1,6 @@
 <template>
    <button class="btn-icon" :class="[`btn-icon--${variant}`, `btn-icon--${size}`, { 'is-loading': loading }]"
-      :disabled="disabled" :type="type" :aria-busy="loading" :aria-label="ariaLabel">
+      :disabled="disabled" :type="type" :aria-busy="loading" :aria-label="ariaLabel ? String(ariaLabel) : undefined">
       <span class="btn-icon__content" v-if="!loading" aria-hidden="true">
          <slot></slot>
       </span>
@@ -17,7 +17,7 @@ import type { UIButtonType, UISize, UIButtonVariant } from '@/types/ui.types'
 
 /* PROPS INTERFACE*/
 interface Props {
-   ariaLabel?: string
+   ariaLabel?: string | number
    variant?: UIButtonVariant
    type?: UIButtonType
    loading?: boolean
