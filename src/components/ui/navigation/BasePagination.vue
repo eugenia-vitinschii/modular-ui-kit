@@ -5,10 +5,15 @@
             <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
          </svg>
       </base-icon-button>
-      <base-icon-button v-for="i in pages" :key="i + ''" :disabled="i === '...'" :class="{ 'is-active': i === page }"
-         @click="typeof i === 'number' && $emit('change', i)">
-         <base-text>{{ i }}</base-text>
-      </base-icon-button>
+      <div class="base-pagination__desktop">
+         <base-icon-button v-for="i in pages" :key="i + ''" :disabled="i === '...'" :class="{ 'is-active': i === page }"
+            @click="typeof i === 'number' && $emit('change', i)">
+            <base-text>{{ i }}</base-text>
+         </base-icon-button>
+      </div>
+      <div class="base-pagination__mobile">
+         <base-text>{{ page }} / {{ totalPages }}</base-text>
+      </div>
       <base-icon-button :disabled="page === totalPages" @click="$emit('change', page + 1)">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
             <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
@@ -39,7 +44,7 @@ const emit = defineEmits<{
 const pages = computed(() => {
    const total = props.totalPages
    const current = props.page
-   const pageSize = 10 //amout of pages for one line
+   const pageSize = 5 //amout of pages for one line
 
    const startPage = Math.floor((current - 1) / pageSize) * pageSize + 1
    const endPage = Math.min(total, startPage + pageSize - 1)

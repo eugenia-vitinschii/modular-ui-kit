@@ -21,3 +21,15 @@
       p
          color: $primary !important
          font-weight: bold
+   &__desktop
+      display: flex
+      align-items: center
+      gap: 5px
+      @media ( max-width: 640px )
+         display: none
+   &__mobile
+      display: none
+      @media ( max-width: 640px )
+         display: flex
+         align-items: center
+         
