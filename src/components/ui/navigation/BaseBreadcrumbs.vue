@@ -2,7 +2,8 @@
    <div class="container">
       <nav class="base-breadcrumbs" v-if="route.path !== '/'">
          <ul class="base-breadcrumbs__list">
-            <base-icon-button @click="router.back()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+            <base-icon-button @click="router.back()" aria-label="Go back">
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                   <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
                </svg></base-icon-button>
             <li class="base-breadcrumbs__item" v-for="(crumb, index) in breadcrumbs" :key="index">

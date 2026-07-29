@@ -1,11 +1,13 @@
 <template>
    <button class="btn" :class="[`btn--${variant}`, `btn--${size}`, { 'is-loading': loading }]" :disabled="disabled"
-      :type="type">
+      :type="type" :aria-busy="loading">
       <span class="btn__content" v-if="!loading">
          <slot></slot>
       </span>
-      <span class="btn-spinner" v-else>
-      </span>
+      <template v-else>
+         <span class="btn-spinner" aria-hidden="true"></span>
+         <span class="visually-hidden">Loading</span>
+      </template>
    </button>
 </template>
 

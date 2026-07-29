@@ -4,7 +4,7 @@
          <div class="base-toast__message">
             <base-text type="body-text" :variant="toast.variant">{{ toast.message }}</base-text>
          </div>
-         <base-icon-button @click="remove" :variant="toast.variant">
+         <base-icon-button @click="remove" :variant="toast.variant" aria-label="close toast">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                <path
                   d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
