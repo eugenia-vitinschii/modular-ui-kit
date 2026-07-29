@@ -13,8 +13,11 @@ export type UITextVariant = UIVariant | 'muted'
 export type UIButtonVariant = UIVariant | 'ghost'
 export type UIButtonType = "button" | "submit" | "reset"
 
-/* EMPTY STATE */
+/* EMPTY STATE VARIANT */
 export type UIEmptyStateVariant = 'secondary' | 'primary'
 
 /* INPUT TYPE */
 export type UIInputType = "text" | "email" | "password" | "search" | "date" | "tel" | "number"
+
+/* SKELTON TYPE */
+export type UISkeletonType = 'text' | 'circle' | 'rect'

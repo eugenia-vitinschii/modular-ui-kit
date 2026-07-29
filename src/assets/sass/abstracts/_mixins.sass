@@ -128,14 +128,10 @@
 
 
 /* =============================== SKELETONS =============================== */
-@mixin skeleton-color()
+@mixin skeleton-block()
    background: $bg
    opacity: $opacity
-
-@mixin skeleton-block($width:100%, $height: 50px, $margin-top: 20px , $border-radius: $border-radius)
-   @include skeleton-color()
-   margin-top: $margin-top
-   width: $width
-   height: $height
    border-radius: $border-radius
+
+   
 

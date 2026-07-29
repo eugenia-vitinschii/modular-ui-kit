@@ -16,7 +16,20 @@
                <div class="demo section">
                   <Transition name="fade" mode="out-in">
                      <div class="demo-content" v-if="isLoading" key="loading">
-                        <base-skeleton v-for="n in 3" :key="n" class="section__item" />
+                        <div class="skeleton-card" v-for="n in 3" :key="n">
+                           <div class="skeleton-item">
+                              <base-skeleton :type="'circle'" :width="'50px'" />
+                           </div>
+                           <div class="skeleton-item">
+                              <base-skeleton :type="'text'" :width="'200px'" />
+                           </div>
+                           <div class="skeleton-item">
+                              <base-skeleton :type="'text'" :height="'40px'" />
+                           </div>
+                           <div class="skeleton-item">
+                              <base-skeleton :type="'rect'" :width="'120px'" />
+                           </div>
+                        </div>
                      </div>
                      <div class="demo-info section__item" v-else-if="hasError" key="error">
                         <error-state>
@@ -102,4 +115,9 @@ const currentPage = ref(2)
 
 .article:first-child
    margin-top: 0px
+
+.skeleton-card
+   margin-top: 20px
+.skeleton-item
+   margin-top: 10px
 </style>
