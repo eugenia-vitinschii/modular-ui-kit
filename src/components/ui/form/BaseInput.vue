@@ -4,9 +4,10 @@
          {{ label }}
       </label>
       <input class="base-input__control" :class="{ 'is-error': !!error }" :id="id" :type="type"
-         :placeholder="placeholder" :disabled="disabled" :value="modelValue" @input="onInput">
-      <p class="form-error" v-if="error">{{ error }}</p>
-      <p class="form-hint" v-else-if="hint">{{ hint }}</p>
+         :placeholder="placeholder" :disabled="disabled" :value="modelValue" @input="onInput" :aria-invalid="!!error"
+         :aria-describedby="error ? `${id}-error` : hint ? `${id}-hint` : undefined">
+      <p class="form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
+      <p class="form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
    </div>
 </template>
 

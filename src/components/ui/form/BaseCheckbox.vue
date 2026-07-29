@@ -3,17 +3,18 @@
       <label class="base-checkbox__wrapper" :for="id">
          <div class="base-checkbox__data">
             <input type="checkbox" class="base-checkbox__field" :id="id" :checked="modelValue" :disabled="disabled"
-               @change="onChange">
+               @change="onChange" :aria-invalid="!!error"
+               :aria-describedby="error ? `${id}-error` : hint ? `${id}-hint` : undefined">
             <span class="base-checkbox__box" :class="{ 'is-error': !!error }">
                <span class="base-checkbox__check">✓</span>
             </span>
             <span class="form-label form-label--side" v-if="label"> {{ label }}</span>
          </div>
-         <div class="base-checkbox__info">
-            <p class="form-error" v-if="error">{{ error }}</p>
-            <p class="form-hint" v-else-if="hint">{{ hint }}</p>
-         </div>
       </label>
+      <div class="base-checkbox__info">
+         <p class="form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
+         <p class="form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
+      </div>
    </div>
 </template>
 

@@ -5,16 +5,17 @@
       </label>
       <div class="base-select__wrapper">
          <select class="base-select__field" :id="id" :class="{ 'is-error': !!error }" :value="modelValue"
-            :disabled="disabled" @change="onChange">
+            :disabled="disabled" @change="onChange" :aria-invalid="!!error"
+            :aria-describedby="error ? `${id}-error` : hint ? `${id}-hint` : undefined">
             <option v-if="placeholder" value="" disabled>{{ placeholder }}</option>
             <option v-for="option in options" :key="option.value" :value="option.value">
                {{ option.label }}
             </option>
          </select>
-         <span class="base-select__icon">↓</span>
+         <span class="base-select__icon" feat(ui): add a11y to form elements, buttons, and links>↓</span>
       </div>
-      <p class="form-error" v-if="error">{{ error }}</p>
-      <p class="form-hint" v-else-if="hint">{{ hint }}</p>
+      <p class="form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
+      <p class="form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
    </div>
 </template>
 
