@@ -3,11 +3,6 @@
 @use '../abstracts/variables' as *
 @use '../abstracts/colors' as *
 
-/* ==== Sections ==== */
-.section
-   @include container()
-   &__item
-      @include content()
 
 /* ==== Skeleton shimmer ==== */
 .shimmer
@@ -40,19 +35,6 @@
 .fade-leave-to
    opacity: 0
 
-/* ================= PAGE / VIEW =================  */
-.page
-   &__wrapper
-      display: flex
-      flex-direction: column
-      min-height: 100vh
-      min-height: 100dvh
-   &__header
-      flex: 0 0 auto
-   &__content
-      flex: 1 0 auto
-   &__footer
-      flex: 0 0 auto
 
 /***/
 .visually-hidden
