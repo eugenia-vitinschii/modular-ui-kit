@@ -6,6 +6,8 @@
 
 `modular-ui-kit-vue` is a lightweight library of independent frontend components designed for rapid development and clean code. No heavy backend logic: just pure, flexible, and responsive UI elements ready to be dropped into any web application.
 
+[![Demo Repository](https://img.shields.io/badge/Demo_Repo-View_Source_Code-6366f1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/eugenia-vitinschii/modular-ui-kit)
+
 ### Install
 
 ```sh
@@ -25,14 +27,51 @@ pnpm add modular-ui-kit-vue
 ```vue
 <template>
   <base-text as="h1" :type="'heading'" :variant="'primary'">My component</base-text>
-  <base-text as="h1" :type="'subheading'" :variant="'warning'">My component</base-text>
-  <base-text as="h1" :variant="'muted'">My component</base-text>
+  <base-text as="h2" :type="'subheading'" :variant="'warning'">My component</base-text>
+  <base-text :variant="'muted'">My component</base-text>
 </template>
 <script setup lang="ts">
 import { BaseText } from 'modular-ui-kit-vue'
 import 'modular-ui-kit-vue/dist/modular-ui-kit-vue.css'
 </script>
 ```
+
+### Available Components
+
+Buttons
+
+- BaseButton: Standard action button
+- BaseIconButton: svg action button
+
+Form Elements
+
+- BaseCheckbox: Checkbox input component
+- BaseInput: Standard text input field
+- BaseRadio: Radio button option
+- BaseSelect: Dropdown select menu
+- BaseTextarea : Multi-line text input field
+
+Feedback & States
+
+- BaseToast / BaseToastContainer: Toast notification components
+- useToast: Composition API helper for managing toasts
+- BaseSkeleton: Skeleton loader for async data
+- EmptyState: Placeholder display for empty data views
+
+- ErrorState: Placeholder display for error screens
+
+Navigation
+
+- BaseBreadcrumbs: Breadcrumb navigation path
+- BasePagination: Page navigation control
+
+Overlays
+
+- BaseModal: Modal dialog window with color variants
+
+Typography
+
+- BaseText: Standardized typography component
 
 ### Design Tokens
 
@@ -102,14 +141,6 @@ import 'modular-ui-kit-vue/dist/modular-ui-kit-vue.css'
 import '@/assets/sass/app.sass'
 ```
 
-### Accessibility (a11y)
-
-All components are built with basic accessibility in mind:
-
-- Native keyboard navigation support (Focus states, `Enter` / `Space` key handlers).
-- Proper ARIA attributes (`aria-expanded`, `aria-hidden`) out of the box.
-- High-contrast focus rings for better visibility.
-
 ### Documentation
 
 [![Wiki Documentation](https://img.shields.io/badge/docs-GitHub_Wiki-blue?style=for-the-badge&logo=github)](https://github.com/eugenia-vitinschii/modular-ui-kit/wiki/Base-Button-Component)
@@ -141,7 +172,8 @@ export type UIButtonType = "button" | "submit" | "reset"
 - loading?: boolean
 - disabled?: boolean
 
-- ## Deafult params
+Deafult params
+
 - variant: "primary",
 - type: "button",
 - size: "lg",
@@ -154,3 +186,37 @@ Usage
 <base-button :variant="'secondary'" @click="handleRegister">register</base-button>
 <base-button :type="'submit'" :loading="auth.isLoading" :disabled="auth.isLoading">login</base-button>
 ```
+
+### Types
+
+```ts
+/* UI VARIANTS */
+export type UIVariant = 'primary' | 'danger' | 'warning' | 'success' | 'secondary'
+export type UISize = 'sm' | 'md' | 'lg'
+
+/* TEXT */
+export type UITextType = 'heading' | 'subheading' | 'body-text'
+export type UITextAlign = 'left' | 'center' | 'right'
+export type UITextVariant = UIVariant | 'muted'
+
+/* BUTTONS */
+export type UIButtonVariant = UIVariant | 'ghost'
+export type UIButtonType = 'button' | 'submit' | 'reset'
+
+/* EMPTY STATE VARIANT */
+export type UIEmptyStateVariant = 'secondary' | 'primary'
+
+/* INPUT TYPE */
+export type UIInputType = 'text' | 'email' | 'password' | 'search' | 'date' | 'tel' | 'number'
+
+/* SKELTON TYPE */
+export type UISkeletonType = 'text' | 'circle' | 'rect'
+```
+
+### Accessibility (a11y)
+
+All components are built with basic accessibility in mind:
+
+- Native keyboard navigation support (Focus states, `Enter` / `Space` key handlers).
+- Proper ARIA attributes (`aria-expanded`, `aria-hidden`) out of the box.
+- High-contrast focus rings for better visibility.
