@@ -1,6 +1,6 @@
 {
-  "name": "modular-ui-kit",
-  "version": "1.0.0",
+  "name": "modular-ui-kit-vue",
+  "version": "1.0.3",
   "author": "vitinschii.eugenia@gmail.com",
   "description": "A modular, lightweight UI kit built with Vue 3, Pinia, and TypeScript.",
   "type": "module",
@@ -9,18 +9,18 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
     },
-    "./dist/style.css": "./dist/modular-ui-kit.css",
-    "./dist/modular-ui-kit.css": "./dist/modular-ui-kit.css"
+    "./dist/modular-ui-kit-vue.css": "./dist/modular-ui-kit-vue.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build && cp src/index.d.ts dist/index.d.ts",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
@@ -30,8 +30,8 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "peerDependencies": {
-    "vue": "^3.5.38",
     "pinia": "^3.0.4",
+    "vue": "^3.5.38",
     "vue-router": "^4.6.4"
   },
   "dependencies": {

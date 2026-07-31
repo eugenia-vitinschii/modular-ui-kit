@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+
 import { resolve } from 'node:path'
 
 export default defineConfig(({ command }) => {
@@ -10,7 +11,7 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [
       vue(),
-      //dev
+      // dev
       !isBuild && vueDevTools(),
     ].filter(Boolean),
 
@@ -24,6 +25,7 @@ export default defineConfig(({ command }) => {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
     },
+
     css: {
       preprocessorOptions: {
         sass: {
@@ -32,7 +34,7 @@ export default defineConfig(({ command }) => {
       }
     },
 
-    //build
+    // build
     ...(isBuild && {
       build: {
         lib: {
@@ -49,7 +51,7 @@ export default defineConfig(({ command }) => {
               'vue-router': 'VueRouter'
             },
             assetFileNames: (assetInfo) => {
-              if (assetInfo.name === 'style.css') return 'modular-ui-kit.css'
+              if (assetInfo.name === 'style.css') return 'modular-ui-kit-vue.css'
               return assetInfo.name || 'assets/[name]-[hash][extname]'
             }
           }
