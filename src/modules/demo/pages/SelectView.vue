@@ -32,8 +32,7 @@
 import { ref } from 'vue'
 
 /* COMPONENTS */
-import BaseSelect from '@/components/ui/form/BaseSelect.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseSelect, BaseText } from 'modular-ui-kit-vue'
 
 /* state */
 const selectedCountry = ref('')

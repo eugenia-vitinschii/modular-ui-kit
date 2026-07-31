@@ -37,8 +37,7 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseText, BaseCheckbox } from 'modular-ui-kit-vue'
 
 /* state */
 const baseValue = ref(true)

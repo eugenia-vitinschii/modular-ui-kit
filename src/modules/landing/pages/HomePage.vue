@@ -10,6 +10,6 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseText } from 'modular-ui-kit-vue'
 
 </script>

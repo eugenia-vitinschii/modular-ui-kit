@@ -22,13 +22,13 @@
                </div>
                <div class="demo-controls section">
                   <base-text as="h2" :type="'heading'">Variant: [{{ selectedVariant }}] Align: [{{ selectedAlign
-                  }}]</base-text>
+                     }}]</base-text>
                   <base-text :type="'heading'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
-                     }}</base-text>
+                  }}</base-text>
                   <base-text :type="'subheading'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
-                     }}</base-text>
+                  }}</base-text>
                   <base-text :type="'body-text'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
-                     }}</base-text>
+                  }}</base-text>
                </div>
                <div class="demo-controls section">
                   <base-text as="h3" :type="'heading'">Custom Tags & Links (`as` prop) </base-text>
@@ -47,12 +47,10 @@
 import { ref } from 'vue'
 
 /* COMPONENTS */
-import BaseRadio from '@/components/ui/form/BaseRadio.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseInput from '@/components/ui/form/BaseInput.vue';
+import { BaseRadio, BaseText, BaseInput } from 'modular-ui-kit-vue'
 
 /* Types */
-import type { UITextVariant, UITextAlign } from '@/types/ui.types';
+import type { UITextVariant, UITextAlign } from 'modular-ui-kit-vue'
 
 /* Options */
 const variantOptions: UITextVariant[] = [

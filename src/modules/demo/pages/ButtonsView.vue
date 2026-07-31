@@ -62,10 +62,7 @@
 import { ref } from 'vue'
 
 /* COMPONENTS */
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
-import BaseIconButton from '@/components/ui/buttons/BaseIconButton.vue';
-import BaseRadio from '@/components/ui/form/BaseRadio.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseButton, BaseIconButton, BaseRadio, BaseText } from 'modular-ui-kit-vue'
 
 /* TYPES */
 import type { UIButtonVariant, UISize } from '@/types/ui.types';

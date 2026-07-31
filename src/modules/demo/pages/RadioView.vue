@@ -31,8 +31,8 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import BaseRadio from '@/components/ui/form/BaseRadio.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseRadio, BaseText } from 'modular-ui-kit-vue'
+
 
 /* state */
 const selectedPlan = ref('starter')

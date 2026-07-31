@@ -51,14 +51,9 @@
 import { ref } from 'vue';
 
 /* Components */
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
-import BaseInput from '@/components/ui/form/BaseInput.vue';
-import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
-import BaseModal from '@/components/ui/overlays/BaseModal.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseButton, BaseInput, BaseCheckbox, BaseModal, BaseText, useToast } from 'modular-ui-kit-vue'
 
-import { useToast } from '@/components/ui/feedback/useToast';
-import type { UIVariant } from '@/types/ui.types'
+import type { UIVariant } from 'modular-ui-kit-vue'
 
 /*======= TOAST DEMO ======= */
 

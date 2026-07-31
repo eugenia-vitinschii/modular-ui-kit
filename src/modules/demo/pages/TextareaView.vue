@@ -35,8 +35,8 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import BaseTextarea from '@/components/ui/form/BaseTextarea.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseTextarea, BaseText } from 'modular-ui-kit-vue'
+
 
 /* state */
 const biography = ref('')

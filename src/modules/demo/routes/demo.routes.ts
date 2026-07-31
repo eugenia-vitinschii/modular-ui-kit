@@ -36,12 +36,6 @@ export const demoRoutes: RouteRecordRaw[] = [
                   name: 'ui-flow',
                   component: () => import('../pages/ComponentFlowView.vue'),
                   meta: { title: "Component Flow" },
-               },
-               {
-                  path: 'table',
-                  name: 'ui-table',
-                  component: () => import('../pages/TableView.vue'),
-                  meta: { title: "Table" },
                }, {
                   path: 'feedback',
                   name: 'ui-feedback',

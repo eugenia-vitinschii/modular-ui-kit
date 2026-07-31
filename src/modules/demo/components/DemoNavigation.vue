@@ -24,8 +24,8 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseIconButton from '@/components/ui/buttons/BaseIconButton.vue';
+import { BaseText, BaseIconButton } from 'modular-ui-kit-vue'
+
 
 /* PROPS & EMITS */
 const emit = defineEmits<{
@@ -49,7 +49,6 @@ const navConfig: NavGroup[] = [
          { label: 'Typography', path: '/demo/ui/text' },
          { label: 'Buttons', path: '/demo/ui/buttons' },
          { label: 'Component Flow', path: '/demo/ui/flow' },
-         { label: 'Data Table', path: '/demo/ui/table' },
          { label: 'Feedback & Toast', path: '/demo/ui/feedback' },
       ]
    },

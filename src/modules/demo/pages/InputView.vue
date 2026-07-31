@@ -38,8 +38,8 @@
 import { ref, computed } from 'vue'
 
 /* COMPONENTS */
-import BaseInput from '@/components/ui/form/BaseInput.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseInput, BaseText } from 'modular-ui-kit-vue'
+
 
 /* vstate */
 const textValue = ref('')

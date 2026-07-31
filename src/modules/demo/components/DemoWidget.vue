@@ -14,7 +14,7 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
+import { BaseButton } from 'modular-ui-kit-vue'
 import DemoNavigation from './DemoNavigation.vue';
 
 /* STATE */

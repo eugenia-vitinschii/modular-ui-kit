@@ -13,8 +13,8 @@
 
 <script setup lang="ts">
 /* COMPONETS */
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseButton, BaseText } from 'modular-ui-kit-vue'
+
 
 /* === PROPS & EMITS === */
 

@@ -25,8 +25,7 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
+import { BaseText, BaseButton } from 'modular-ui-kit-vue'
 
 /*STORE */
 import { useAuthStore } from '../store/useAuthStore';

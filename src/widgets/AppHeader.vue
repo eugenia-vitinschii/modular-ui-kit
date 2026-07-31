@@ -38,8 +38,7 @@
 import { useRouter } from 'vue-router';
 
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseIconButton from '@/components/ui/buttons/BaseIconButton.vue';
+import { BaseText, BaseIconButton } from 'modular-ui-kit-vue'
 
 /* STORE */
 import { useAuthStore } from '@/modules/auth/store/useAuthStore';

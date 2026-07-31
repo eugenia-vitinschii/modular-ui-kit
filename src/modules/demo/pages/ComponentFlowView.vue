@@ -71,13 +71,7 @@
 import { ref, computed } from 'vue'
 
 /* COMPONENTS */
-import BaseRadio from '@/components/ui/form/BaseRadio.vue';
-import EmptyState from '@/components/ui/feedback/EmptyState.vue';
-import ErrorState from '@/components/ui/feedback/ErrorState.vue';
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
-import BaseSkeleton from '@/components/ui/feedback/BaseSkeleton.vue';
-import BasePagination from '@/components/ui/navigation/BasePagination.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import { BaseRadio, EmptyState, ErrorState, BaseButton, BaseSkeleton, BasePagination, BaseText } from 'modular-ui-kit-vue'
 
 const MOCK_ARTICLES = [
    { slug: 'vue3-guide', title: 'Mastering Vue 3 Composition API', description: 'Deep dive into setup, refs, and clean architecture.' },

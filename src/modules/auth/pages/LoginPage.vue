@@ -41,9 +41,7 @@ import { useRouter } from 'vue-router';
 import { onUnmounted, ref } from 'vue';
 
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseInput from '@/components/ui/form/BaseInput.vue';
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
+import { BaseText, BaseInput, BaseButton } from 'modular-ui-kit-vue'
 
 /* STORE */
 import { useAuthStore } from '../store/useAuthStore';
