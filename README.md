@@ -132,6 +132,54 @@ open or create app.sass, copy and use:
   --ui-transition: all 0.3s ease-out
   --ui-opacity: 0.4
 
+/*  SASS VARIABLES ALIASES */
+
+/* === Colors === */
+$text: var(--ui-text)
+$text-muted: var(--ui-text-muted)
+
+$bg: var(--ui-bg)
+$bg-soft: var(--ui-bg-soft)
+$bg-card: var(--ui-bg-card)
+$bg-code: var(--ui-bg-code)
+
+$primary: var(--ui-primary)
+$primary-hover: var(--ui-primary-hover)
+$danger: var(--ui-danger)
+$success: var(--ui-success)
+$warning: var(--ui-warning)
+
+/* === Typography === */
+$heading: var(--ui-font-heading)
+$subheading: var(--ui-font-subheading)
+$body-text: var(--ui-font-body)
+
+$heading-md: var(--ui-font-heading-md)
+$subheading-md: var(--ui-font-subheading-md)
+$body-text-md: var(--ui-font-body-md)
+
+$heading-sm: var(--ui-font-heading-sm)
+$subheading-sm: var(--ui-font-subheading-sm)
+$body-text-sm: var(--ui-font-body-sm)
+
+/* === Borders === */
+$border-color: var(--ui-border-color)
+$border-width: var(--ui-border-width)
+$border-style: var(--ui-border-style)
+$border-radius: var(--ui-border-radius)
+
+/* === Space Tokens === */
+$space-content-sm: var(--ui-space-content-sm)
+$space-content-md: var(--ui-space-content-md)
+$space-content-lg: var(--ui-space-content-lg)
+
+$space-container-sm: var(--ui-space-container-sm)
+$space-container-md: var(--ui-space-container-md)
+$space-container-lg: var(--ui-space-container-lg)
+
+/* === Design === */
+$transition: var(--ui-transition)
+$opacity: var(--ui-opacity)
 ```
 
 import styles inside main.ts
