@@ -25,8 +25,8 @@ import { useRoute } from 'vue-router';
 /* === COMPONENTS === */
 import AppHeader from './widgets/AppHeader.vue';
 import AppFooter from './widgets/AppFooter.vue';
-import BaseBreadcrumbs from './components/ui/navigation/BaseBreadcrumbs.vue';
-import BaseToastContainer from './components/ui/feedback/BaseToastContainer.vue';
+
+import { BaseBreadcrumbs, BaseToastContainer } from 'modular-ui-kit-vue'
 
 /* === DEMO === */
 import DemoWidget from './modules/demo/components/DemoWidget.vue';
