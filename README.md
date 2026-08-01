@@ -67,26 +67,29 @@ modular-ui-kit-vue is built using native CSS variables. You can easily override 
 open or create app.sass, copy and use:
 
 ```
-/*  DESIGN TOKENS (CSS Variables for Customization) */
+/* DESIGN TOKENS — Electric Cyan */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap')
+
 :root
   /* === Colors: Text === */
-  --ui-text: #eceef2
-  --ui-text-muted: #8a93a6
+  --ui-text: #f1f5f9
+  --ui-text-muted: #94a3b8
 
   /* === Colors: Backgrounds === */
-  --ui-bg: #0b0d11
-  --ui-bg-soft: #12151c
-  --ui-bg-card: #171b24
-  --ui-bg-code: #1e2330
+  --ui-bg: #0f172a
+  --ui-bg-soft: #1e293b
+  --ui-bg-card: #334155
+  --ui-bg-code: #1e293b
 
   /* === Colors: Accents & Statuses === */
-  --ui-primary: #6366f1
-  --ui-primary-hover: #4f46e5
-  --ui-danger: #ff4a6b
+  --ui-primary: #06b6d4
+  --ui-primary-hover: #0891b2
+  --ui-danger: #ff4d4d
   --ui-success: #10b981
   --ui-warning: #f59e0b
 
   /* === Typography === */
+  --ui-font-family: 'Space Grotesk', sans-serif
   --ui-font-heading: 26px
   --ui-font-subheading: 19px
   --ui-font-body: 16px
@@ -103,7 +106,7 @@ open or create app.sass, copy and use:
   --ui-border-color: rgba(236, 238, 242, 0.08)
   --ui-border-width: 1px
   --ui-border-style: solid
-  --ui-border-radius: 0px
+  --ui-border-radius: 8px
 
   /* === Space Tokens: Elements (inputs, buttons, icons) === */
   --ui-space-content-sm: 6px
@@ -137,6 +140,8 @@ $success: var(--ui-success)
 $warning: var(--ui-warning)
 
 /* === Typography === */
+$font-family: var(--ui-font-family)
+
 $heading: var(--ui-font-heading)
 $subheading: var(--ui-font-subheading)
 $body-text: var(--ui-font-body)
@@ -167,6 +172,7 @@ $space-container-lg: var(--ui-space-container-lg)
 /* === Design === */
 $transition: var(--ui-transition)
 $opacity: var(--ui-opacity)
+
 ```
 
 import styles inside main.ts
