@@ -7,10 +7,18 @@
 .base-input
    display: flex
    flex-direction: column
+   &__wrapper
+      position: relative
+      display: flex
+      flex-direction: row
    &__control
       @include form-element()
-   // &.is-error .base-input__control
-   //    border-color:$danger
+      width: 100%
+   &__button 
+      // @include form-element()
+      position: absolute
+      right: 30px
+      
 
 
 // change calendar icon color 
