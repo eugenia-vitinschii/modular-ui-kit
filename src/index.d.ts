@@ -2,43 +2,38 @@ declare module 'modular-ui-kit-vue' {
    import { DefineComponent } from 'vue'
 
    /*  FORM ELEMENTS */
-   export const BaseCheckbox: DefineComponent<{}, {}, any>
-   export const BaseInput: DefineComponent<{}, {}, any>
-   export const BaseRadio: DefineComponent<{}, {}, any>
-   export const BaseSelect: DefineComponent<{}, {}, any>
-   export const BaseTextarea: DefineComponent<{}, {}, any>
+   export const MukCheckbox: DefineComponent<{}, {}, any>
+   export const MukInput: DefineComponent<{}, {}, any>
+   export const MukRadio: DefineComponent<{}, {}, any>
+   export const MukSelect: DefineComponent<{}, {}, any>
+   export const MukTextarea: DefineComponent<{}, {}, any>
 
    /*  BUTTONS  */
-   export const BaseButton: DefineComponent<{}, {}, any>
-   export const BaseIconButton: DefineComponent<{}, {}, any>
+   export const MukButton: DefineComponent<{}, {}, any>
+   export const MukIconButton: DefineComponent<{}, {}, any>
 
    /*  FEEDBACK  */
-   export const BaseSkeleton: DefineComponent<{}, {}, any>
-   export const BaseToast: DefineComponent<{}, {}, any>
-   export const BaseToastContainer: DefineComponent<{}, {}, any>
-   export const useToast: () => any
-   export const EmptyState: DefineComponent<{}, {}, any>
-   export const ErrorState: DefineComponent<{}, {}, any>
+   export const MukSkeleton: DefineComponent<{}, {}, any>
+   export const MukToast: DefineComponent<{}, {}, any>
+   export const MukToastContainer: DefineComponent<{}, {}, any>
+   export const useMukToast: () => any
+   export const MukEmptyState: DefineComponent<{}, {}, any>
+   export const MukErrorState: DefineComponent<{}, {}, any>
 
    /*  NAVIGATIONS  */
-   export const BaseBreadcrumbs: DefineComponent<{}, {}, any>
-   export const BasePagination: DefineComponent<{}, {}, any>
+   export const MukBreadcrumbs: DefineComponent<{}, {}, any>
+   export const MukPagination: DefineComponent<{}, {}, any>
 
    /*  OVERLAYS  */
-   export const BaseModal: DefineComponent<{}, {}, any>
+   export const MukModal: DefineComponent<{}, {}, any>
 
    /*  TYPOGRAPHY */
-   export const BaseText: DefineComponent<{}, {}, any>
+   export const MukText: DefineComponent<{}, {}, any>
 
    /*  TYPES */
-   export type UIVariant = 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | string
-   export type UISize = 'sm' | 'md' | 'lg' | string
-   export type UITextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
-   export type UITextAlign = 'left' | 'center' | 'right'
-   export type UITextVariant = UIVariant
-   export type UIButtonVariant = UIVariant
-   export type UIButtonType = 'button' | 'submit' | 'reset'
-   export type UIEmptyStateVariant = UIVariant
-   export type UIInputType = 'text' | 'password' | 'email' | 'number' | 'tel' | 'url'
-   export type UISkeletonType = 'text' | 'avatar' | 'card' | 'custom'
+   export type {
+      UiVariant, UISize, UITextType, UITextAlign, UITextVariant, UIButtonVariant, UIButtonType,
+      UIEmptyStateVariant, UIInputType, UISkeletonType
+   } from './types/ui.types.ts'
 }
+

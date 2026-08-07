@@ -55,12 +55,12 @@ import MukCheckbox from '@/components/ui/form/MukCheckbox.vue';
 import MukModal from '@/components/ui/overlays/MukModal.vue';
 import MukText from '@/components/ui/typography/MukText.vue';
 
-import { useToast } from '@/components/ui/feedback/useMukToast';
+import { useMukToast } from '@/components/ui/feedback/useMukToast';
 import type { UIVariant } from '@/types/ui.types'
 
 /*======= TOAST DEMO ======= */
 
-const { addToast } = useToast()
+const { addToast } = useMukToast()
 
 const variants: UIVariant[] = [
    'primary',

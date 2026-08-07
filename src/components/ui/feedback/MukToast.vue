@@ -24,13 +24,13 @@ import MukIconButton from '../buttons/MukIconButton.vue';
 import MukText from '../typography/MukText.vue';
 
 /* shared state */
-import { useToast, type Toast } from './useMukToast.ts'
+import { useMukToast, type Toast } from './useMukToast.ts'
 
 /* props */
 const props = defineProps<{ toast: Toast }>()
 
 /* remove toast */
-const { removeToast } = useToast()
+const { removeToast } = useMukToast()
 
 /* variables */
 const progress = ref(100)

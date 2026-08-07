@@ -11,9 +11,9 @@
 import MukToast from './MukToast.vue';
 
 /* Shared state */
-import { useToast } from './useMukToast.ts';
+import { useMukToast } from './useMukToast.ts';
 
 /* variables */
-const { toasts } = useToast()
+const { toasts } = useMukToast()
 
 </script>

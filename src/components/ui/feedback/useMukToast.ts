@@ -16,7 +16,7 @@ export interface Toast {
 /* toast ref */
 const toasts = ref<Toast[]>([])
 
-export function useToast() {
+export function useMukToast() {
    //create toast
    const addToast = (
       message: string,
