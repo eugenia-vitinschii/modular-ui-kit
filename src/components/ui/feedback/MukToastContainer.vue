@@ -1,17 +1,17 @@
 <template>
-   <div class="base-toast-container">
+   <div class="muk-toast-container">
       <TransitionGroup name="toast">
-         <base-toast v-for="toast in toasts" :key="toast.id" :toast="toast" />
+         <muk-toast v-for="toast in toasts" :key="toast.id" :toast="toast" />
       </TransitionGroup>
    </div>
 </template>
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseToast from './BaseToast.vue';
+import MukToast from './MukToast.vue';
 
 /* Shared state */
-import { useToast } from './useToast.ts';
+import { useToast } from './useMukToast.ts';
 
 /* variables */
 const { toasts } = useToast()

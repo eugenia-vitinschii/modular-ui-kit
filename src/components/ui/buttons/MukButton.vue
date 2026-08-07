@@ -1,11 +1,11 @@
 <template>
-   <button class="btn-icon" :class="[`btn-icon--${variant}`, `btn-icon--${size}`, { 'is-loading': loading }]"
-      :disabled="disabled" :type="type" :aria-busy="loading" :aria-label="ariaLabel ? String(ariaLabel) : undefined">
-      <span class="btn-icon__content" v-if="!loading" aria-hidden="true">
+   <button class="muk-btn" :class="[`muk-btn--${variant}`, `muk-btn--${size}`, { 'is-loading': loading }]"
+      :disabled="disabled" :type="type" :aria-busy="loading">
+      <span class="muk-btn__content" v-if="!loading">
          <slot></slot>
       </span>
       <template v-else>
-         <span class="btn-spinner" aria-hidden="true"></span>
+         <span class="muk-btn-spinner" aria-hidden="true"></span>
          <span class="visually-hidden">Loading</span>
       </template>
    </button>
@@ -17,20 +17,19 @@ import type { UIButtonType, UISize, UIButtonVariant } from '@/types/ui.types'
 
 /* PROPS INTERFACE*/
 interface Props {
-   ariaLabel?: string | number
    variant?: UIButtonVariant
+   size?: UISize
    type?: UIButtonType
    loading?: boolean
    disabled?: boolean
-   size?: UISize
 }
 
 /* DEFAULT BUTTON Props */
 withDefaults(defineProps<Props>(), {
    variant: "primary",
    type: "button",
-   loading: false,
    size: "lg",
+   loading: false,
    disabled: false
 })
 </script>

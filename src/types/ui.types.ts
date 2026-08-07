@@ -5,7 +5,7 @@ export type UIVariant = 'primary' | 'danger' | 'warning' | 'success' | 'secondar
 export type UISize = 'sm' | 'md' | 'lg'
 
 /* TEXT */
-export type UITextType = 'heading' | 'subheading' | 'body-text'
+export type UITextType = 'muk-heading' | 'muk-subheading' | 'muk-body-text'
 export type UITextAlign = 'left' | 'center' | 'right'
 export type UITextVariant = UIVariant | 'muted'
 

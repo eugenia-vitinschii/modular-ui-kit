@@ -1,14 +1,14 @@
 <template>
-   <div class="base-textarea">
-      <label class="form-label form-label--top" v-if="label" :for="id">
+   <div class="muk-textarea">
+      <label class="muk-form-label muk-form-label--top" v-if="label" :for="id">
          {{ label }}
       </label>
-      <textarea class="base-textarea__field" :class="{ 'is-error': !!error }" :id="id" :placeholder="placeholder"
+      <textarea class="muk-textarea__field" :class="{ 'is-error': !!error }" :id="id" :placeholder="placeholder"
          :value="modelValue" :rows="rows" :disabled="disabled" @input="onInput" :aria-invalid="!!error"
          :aria-describedby="error ? `${id}-error` : hint ? `${id}-hint` : undefined">
       </textarea>
-      <p class="form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
-      <p class="form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
+      <p class="muk-form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
+      <p class="muk-form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
    </div>
 </template>
 

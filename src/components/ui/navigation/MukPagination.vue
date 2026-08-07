@@ -1,24 +1,24 @@
 <template>
-   <div class="base-pagination">
-      <base-icon-button :disabled="page === 1" @click="$emit('change', page - 1)" aria-label="Previous page">
+   <div class="muk-pagination">
+      <muk-icon-button :disabled="page === 1" @click="$emit('change', page - 1)" aria-label="Previous page">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
             <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
          </svg>
-      </base-icon-button>
-      <div class="base-pagination__desktop">
-         <base-icon-button v-for="i in pages" :key="i + ''" :disabled="i === '...'" :class="{ 'is-active': i === page }"
-            @click="typeof i === 'number' && $emit('change', i)" :aria-label="i">
-            <base-text>{{ i }}</base-text>
-         </base-icon-button>
+      </muk-icon-button>
+      <div class="muk-pagination__desktop">
+         <muk-icon-button v-for="i in pages" :key="i + ''" :disabled="i === '...'" :class="{ 'is-active': i === page }"
+            @click="typeof i === 'number' && $emit('change', i)" :muk-label="i">
+            <muk-text>{{ i }}</muk-text>
+         </muk-icon-button>
       </div>
-      <div class="base-pagination__mobile">
-         <base-text>{{ page }} / {{ totalPages }}</base-text>
+      <div class="muk-pagination__mobile">
+         <muk-text>{{ page }} / {{ totalPages }}</muk-text>
       </div>
-      <base-icon-button :disabled="page === totalPages" @click="$emit('change', page + 1)" aria-label="Next page">
+      <muk-icon-button :disabled="page === totalPages" @click="$emit('change', page + 1)" aria-label="Next page">
          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
             <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
          </svg>
-      </base-icon-button>
+      </muk-icon-button>
    </div>
 </template>
 
@@ -27,8 +27,8 @@
 import { computed } from 'vue';
 
 /* COMPONENTS */
-import BaseIconButton from '../buttons/BaseIconButton.vue';
-import BaseText from '../typography/BaseText.vue';
+import MukIconButton from '../buttons/MukIconButton.vue';
+import MukText from '../typography/MukText.vue';
 
 /* PROPS */
 const props = defineProps<{

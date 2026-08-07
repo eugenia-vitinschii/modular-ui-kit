@@ -1,5 +1,5 @@
 <template>
-   <component :is="as" :class="[type, `txt--${align}`, `txt--${variant}`]">
+   <component :is="as" :class="[type, `muk-txt--${align}`, `muk-txt--${variant}`]">
       <slot></slot>
    </component>
 </template>
@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
    variant: 'secondary',
    align: 'left',
    as: 'p',
-   type: 'body-text'
+   type: 'muk-body-text'
 })
 
 </script>

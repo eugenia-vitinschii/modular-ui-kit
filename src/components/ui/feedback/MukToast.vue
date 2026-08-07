@@ -1,17 +1,17 @@
 <template>
-   <div class="base-toast" :class="`base-toast--${toast.variant}`" @mouseenter="pause" @mouseleave="resume">
-      <div class="base-toast__wrapper">
-         <div class="base-toast__message">
-            <base-text type="body-text" :variant="toast.variant">{{ toast.message }}</base-text>
+   <div class="muk-toast" :class="`muk-toast--${toast.variant}`" @mouseenter="pause" @mouseleave="resume">
+      <div class="muk-toast__wrapper">
+         <div class="muk-toast__message">
+            <muk-text type="muk-body-text" :variant="toast.variant">{{ toast.message }}</muk-text>
          </div>
-         <base-icon-button @click="remove" :variant="toast.variant" aria-label="close toast">
+         <muk-icon-button @click="remove" :variant="toast.variant" aria-label="close toast">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                <path
                   d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
             </svg>
-         </base-icon-button>
+         </muk-icon-button>
       </div>
-      <div class="base-toast__progress" :style="{ width: progress + '%' }"></div>
+      <div class="muk-toast__progress" :style="{ width: progress + '%' }"></div>
    </div>
 </template>
 
@@ -20,11 +20,11 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 /* Components */
-import BaseIconButton from '../buttons/BaseIconButton.vue';
-import BaseText from '../typography/BaseText.vue';
+import MukIconButton from '../buttons/MukIconButton.vue';
+import MukText from '../typography/MukText.vue';
 
 /* shared state */
-import { useToast, type Toast } from './useToast.ts'
+import { useToast, type Toast } from './useMukToast.ts'
 
 /* props */
 const props = defineProps<{ toast: Toast }>()

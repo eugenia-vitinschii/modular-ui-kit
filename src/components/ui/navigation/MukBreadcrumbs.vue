@@ -1,16 +1,16 @@
 <template>
-   <div class="container">
-      <nav class="base-breadcrumbs" v-if="route.path !== '/'">
-         <ul class="base-breadcrumbs__list">
-            <base-icon-button @click="router.back()" aria-label="Go back">
+   <div class="muk-container">
+      <nav class="muk-breadcrumbs" v-if="route.path !== '/'">
+         <ul class="muk-breadcrumbs__list">
+            <muk-icon-button @click="router.back()" aria-label="Go back">
                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                   <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
-               </svg></base-icon-button>
-            <li class="base-breadcrumbs__item" v-for="(crumb, index) in breadcrumbs" :key="index">
-               <base-text as="span" v-if="index === breadcrumbs.length - 1">{{ crumb.label }}</base-text>
+               </svg></muk-icon-button>
+            <li class="muk-breadcrumbs__item" v-for="(crumb, index) in breadcrumbs" :key="index">
+               <muk-text as="span" v-if="index === breadcrumbs.length - 1">{{ crumb.label }}</muk-text>
                <template v-else>
-                  <base-text as="router-link" :to="crumb.to" :align="'center'"> {{ crumb.label }}</base-text>
-                  <base-text as="span" class="base-breadcrumbs__item-separator">/</base-text>
+                  <muk-text as="router-link" :to="crumb.to" :align="'center'"> {{ crumb.label }}</muk-text>
+                  <muk-text as="span" class="muk-breadcrumbs__item-separator">/</muk-text>
                </template>
             </li>
          </ul>
@@ -25,8 +25,8 @@ import { computed } from "vue"
 import { useRoute, useRouter } from "vue-router"
 
 /* COMPONENTS */
-import BaseIconButton from "../buttons/BaseIconButton.vue"
-import BaseText from "../typography/BaseText.vue"
+import MukIconButton from "../buttons/MukIconButton.vue"
+import MukText from "../typography/MukText.vue"
 
 const route = useRoute()
 const router = useRouter()

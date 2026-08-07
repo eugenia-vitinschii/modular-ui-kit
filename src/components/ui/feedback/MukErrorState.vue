@@ -1,10 +1,10 @@
 <template>
-   <div class="error-state">
-      <div class="error-state__text">
-         <base-text type="subheading" as="h3" :align="'center'" variant="danger">{{ title }}</base-text>
-         <base-text type="body-text" :align="'center'">{{ description }}</base-text>
+   <div class="muk-error-state">
+      <div class="muk-error-state__text">
+         <muk-text type="muk-subheading" as="h3" :align="'center'" variant="danger">{{ title }}</muk-text>
+         <muk-text :align="'center'">{{ description }}</muk-text>
       </div>
-      <div class="error-state__action">
+      <div class="muk-error-state__action">
          <slot name="action"></slot>
       </div>
    </div>
@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseText from '../typography/BaseText.vue';
+import MukText from '../typography/MukText.vue';
 
 /* PROPS */
 const props = withDefaults(

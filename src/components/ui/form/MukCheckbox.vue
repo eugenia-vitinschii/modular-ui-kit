@@ -1,19 +1,19 @@
 <template>
-   <div class="base-checkbox">
-      <label class="base-checkbox__wrapper" :for="id">
-         <div class="base-checkbox__data">
-            <input type="checkbox" class="base-checkbox__field" :id="id" :checked="modelValue" :disabled="disabled"
+   <div class="muk-checkbox">
+      <label class="muk-checkbox__wrapper" :for="id">
+         <div class="muk-checkbox__data">
+            <input type="checkbox" class="muk-checkbox__field" :id="id" :checked="modelValue" :disabled="disabled"
                @change="onChange" :aria-invalid="!!error"
                :aria-describedby="error ? `${id}-error` : hint ? `${id}-hint` : undefined">
-            <span class="base-checkbox__box" :class="{ 'is-error': !!error }">
-               <span class="base-checkbox__check">✓</span>
+            <span class="muk-checkbox__box" :class="{ 'is-error': !!error }">
+               <span class="muk-checkbox__check">✓</span>
             </span>
-            <span class="form-label form-label--side" v-if="label"> {{ label }}</span>
+            <span class="muk-form-label muk-form-label--side" v-if="label"> {{ label }}</span>
          </div>
       </label>
-      <div class="base-checkbox__info">
-         <p class="form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
-         <p class="form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
+      <div class="muk-checkbox__info">
+         <p class="muk-form-error" v-if="error" :id="`${id}-error`">{{ error }}</p>
+         <p class="muk-form-hint" v-else-if="hint" :id="`${id}-hint`">{{ hint }}</p>
       </div>
    </div>
 </template>

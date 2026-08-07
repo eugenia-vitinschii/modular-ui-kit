@@ -1,15 +1,15 @@
 <template>
    <Teleport to="body">
       <transition name="modal-fade">
-         <div class="base-modal-backdrop" v-if="open" @click="close">
-            <div class="base-modal" :class="`base-modal--${variant}`" @click.stop>
-               <div class="base-modal__header" v-if="title">
-                  <base-text type="subheading" :variant="variant">{{ title }}</base-text>
+         <div class="muk-modal-backdrop" v-if="open" @click="close">
+            <div class="muk-modal" :class="`muk-modal--${variant}`" @click.stop>
+               <div class="muk-modal__header" v-if="title">
+                  <muk-text type="muk-subheading" :variant="variant">{{ title }}</muk-text>
                </div>
-               <div class="base-modal__content">
+               <div class="muk-modal__content">
                   <slot name="content"></slot>
                </div>
-               <div class="base-modal__footer">
+               <div class="muk-modal__footer">
                   <slot name="actions"></slot>
                </div>
             </div>
@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 /* VUE */
-import BaseText from '../typography/BaseText.vue';
+import MukText from '../typography/MukText.vue';
 
 /* VUE */
 import { Teleport, Transition } from 'vue';

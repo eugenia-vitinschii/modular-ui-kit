@@ -1,5 +1,5 @@
 <template>
-   <div class="base-skeleton" :class="[`base-skeleton__${type}`, { 'shimmer': shimmer }]" :style="customSize">
+   <div class="muk-skeleton" :class="[`muk-skeleton__${type}`, { 'muk-shimmer': shimmer }]" :style="customSize">
    </div>
 </template>
 
