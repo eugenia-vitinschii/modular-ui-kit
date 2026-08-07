@@ -30,10 +30,14 @@ declare module 'modular-ui-kit-vue' {
    /*  TYPOGRAPHY */
    export const MukText: DefineComponent<{}, {}, any>
 
-   /*  TYPES */
-   export type {
-      UiVariant, UISize, UITextType, UITextAlign, UITextVariant, UIButtonVariant, UIButtonType,
-      UIEmptyStateVariant, UIInputType, UISkeletonType
-   } from './types/ui.types.ts'
+   export type UIVariant = 'primary' | 'danger' | 'warning' | 'success' | 'secondary'
+   export type UISize = 'sm' | 'md' | 'lg'
+   export type UITextType = 'muk-heading' | 'muk-subheading' | 'muk-body-text'
+   export type UITextAlign = 'left' | 'center' | 'right'
+   export type UITextVariant = UIVariant | 'muted'
+   export type UIButtonVariant = UIVariant | 'ghost'
+   export type UIButtonType = "button" | "submit" | "reset"
+   export type UIEmptyStateVariant = 'secondary' | 'primary'
+   export type UIInputType = "text" | "email" | "password" | "search" | "date" | "tel" | "number"
+   export type UISkeletonType = 'text' | 'circle' | 'rect'
 }
-
