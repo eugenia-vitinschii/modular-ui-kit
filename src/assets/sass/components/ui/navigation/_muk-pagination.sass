@@ -1,10 +1,10 @@
 /* === Pagination === */
    
-@use '../../../abstracts/_tokens' as *
-@use '../../../abstracts/_mixins' as *
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
 
 
-.base-pagination
+.muk-pagination
    width: 100%
    display: flex
    align-items: center
@@ -12,13 +12,13 @@
    gap: 8px
    p
       padding-top: 0
-      transition: $transition
+      transition: $muk-transition
       cursor: pointer !important
       &:hover
-         color: $primary-hover
-   .btn-icon.is-active
+         color: $muk-primary-hover
+   .muk-btn-icon.is-active
       p
-         color: $primary !important
+         color: $muk-primary !important
          font-weight: bold
    &__desktop
       display: flex

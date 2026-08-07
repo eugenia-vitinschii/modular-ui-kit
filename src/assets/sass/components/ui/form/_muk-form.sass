@@ -1,0 +1,30 @@
+/* === BASE FORM === */
+
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
+
+/* === LABEL & ERROR & HINT === */
+.muk-form-error
+   @include muk-form-text(13px, $muk-danger)
+
+.muk-form-hint
+   @include muk-form-text(13px, $muk-text-muted)
+
+.muk-form-label
+   @include muk-form-text(13px, $muk-text)
+   &--top
+      margin: 20px 0 10px 0
+   &--side
+      margin: 10px
+      
+/* === LABEL & ERROR & HINT === */
+.muk-form
+   &__item
+      @include muk-content()
+   &__actions
+      @include muk-content()
+      display: flex
+      align-items: center
+      justify-content: start
+      flex-direction: row
+      gap: 10px

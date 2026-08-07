@@ -1,9 +1,9 @@
 /* === CHECKBOX === */
    
-@use '../../../abstracts/_tokens' as *
-@use '../../../abstracts/_mixins' as *
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
 
-.base-checkbox
+.muk-checkbox
    position: relative
    &__wrapper
       width: 100%
@@ -21,18 +21,19 @@
       width: 0
       height: 0
       appearance: none
-      &:focus-visible + .base-checkbox__box
-         border-color: $primary-hover
-      &:checked + .base-checkbox__box
-         border-color: $primary
-         .base-checkbox__check
+      &:focus-visible + .muk-checkbox__box
+         border-color: $muk-primary-hover
+      &:checked + .muk-checkbox__box
+         border-color: $muk-primary
+         .muk-checkbox__check
             transform: scale(1)
       &:disabled
-         & + .base-checkbox__box
-            opacity: $opacity
+         & + .muk-checkbox__box
+            opacity: $muk-opacity
             cursor: not-allowed
    &__box
-      @include form-element()
+      @include muk-form-element()
+      border-radius: 0px
       width: 20px
       height: 20px
       display: flex
@@ -41,9 +42,9 @@
       flex-shrink: 0
       margin-bottom: 4px
    &__check
-      color: $text
+      color: $muk-text
       transform: scale(0)
-      transition: $transition
+      transition: $muk-transition
       border-radius: 50%
 
 

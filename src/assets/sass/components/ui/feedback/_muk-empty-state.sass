@@ -1,0 +1,26 @@
+/* ================= EMPTY STATE =================  */
+   
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
+
+   
+.muk-empty-state
+   @include muk-border()
+   padding: 10px
+   &__text
+      p,h3
+         text-align: center
+   &__actions
+      display: flex
+      justify-content: center
+
+/* ===  VARIANTS === */
+.muk-empty-state--secondary
+   border-color: $muk-text
+
+.muk-empty-state--primary
+   border-color: $muk-primary
+   p, h3, a
+      color: $muk-primary
+
+

@@ -1,0 +1,16 @@
+/* === TEXTAREA === */
+
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
+
+.muk-textarea
+   display: flex
+   flex-direction: column
+   &__field
+      @include muk-form-element()
+      resize: vertical
+      min-height: 120px
+      &::placeholder
+         color: $muk-text-muted
+
+

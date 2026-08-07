@@ -1,0 +1,66 @@
+/* === BASE BUTTON === */
+
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
+
+.muk-btn
+   display: inline-flex
+   align-items: center
+   justify-content: center
+   gap: 8px
+   font-family: inherit
+   font-weight: 500
+   line-height: 1.2
+   user-select: none
+   white-space: nowrap
+   cursor: pointer
+   transition: $muk-transition
+   outline: none
+   border: none
+   
+/*=== SIZES [height, padding-x, font size] ===*/
+.muk-btn--sm
+   @include muk-button-size( 14px, 14px)
+   --spinner-size: 14px
+.muk-btn--md
+   @include muk-button-size( 16px, 15px)
+   --spinner-size: 18px
+.muk-btn--lg
+   @include muk-button-size(18px, 16px)
+   --spinner-size: 22px
+
+/*=== VARIANTS [border-color, bg, text color,  hover: bg] ===*/
+.muk-btn--primary
+   @include muk-button-variant($muk-primary, $muk-bg-card, $muk-text, $muk-primary)
+
+.muk-btn--secondary
+    @include muk-button-variant($muk-text-muted, $muk-bg-card, $muk-text, $muk-text-muted)
+
+.muk-btn--success
+   @include muk-button-variant($muk-success, $muk-bg-card, $muk-text, $muk-success)
+
+.muk-btn--warning
+    @include muk-button-variant($muk-warning, $muk-bg-card, $muk-text, $muk-warning)
+
+.muk-btn--danger
+    @include muk-button-variant($muk-danger, $muk-bg-card, $muk-text, $muk-danger)
+
+.muk-btn--ghost
+   @include muk-button-variant($muk-bg, $muk-bg-card, $muk-text-muted)
+
+
+.muk-btn-spinner
+   display: inline-block
+   flex-shrink: 0 
+   width: var(--spinner-size, 18px)
+   height: var(--spinner-size, 18px)
+   border-radius: 50%
+   border: 2px solid var(--spinner-color, currentColor)
+   border-right-color: transparent 
+   animation: spin 0.8s linear infinite
+
+@keyframes spin
+   from
+      transform: rotate(0deg)
+   to
+      transform: rotate(360deg)

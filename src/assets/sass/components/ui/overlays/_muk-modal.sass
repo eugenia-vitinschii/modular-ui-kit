@@ -1,9 +1,9 @@
 /* === BASE MODAL === */
    
-@use '../../../abstracts/_tokens' as *
-@use '../../../abstracts/_mixins' as *
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
 
-.base-modal-backdrop
+.muk-modal-backdrop
    position: fixed
    top: 0
    left: 0
@@ -16,9 +16,9 @@
    z-index: 10000 
    pointer-events: auto
 
-.base-modal
-   @include border()
-   background: $bg-card 
+.muk-modal
+   @include muk-border()
+   background: $muk-bg-card 
    width: 100%
    max-width: 450px 
    padding: 24px   
@@ -36,31 +36,31 @@
 
 
 @media (max-width: 500px)
-   .base-modal
+   .muk-modal
       max-width:100%
 
 /* === ANIMATION === */
 .modal-fade-enter-active, .modal-fade-leave-active
    transition: opacity 0.25s ease
-   .base-modal
+   .muk-modal
       transition: transform 0.25s ease
 
 
 .modal-fade-enter-from, .modal-fade-leave-to
    opacity: 0
-   .base-modal
+   .muk-modal
       transform: translateY(-20px)
 
 /* === VARIANTS === */
-.base-modal
+.muk-modal
    &--primary
-      border-color: $primary
+      border-color: $muk-primary
    &--secondary
-      border-color: $text
+      border-color: $muk-text
    &--success
-      border-color: $success
+      border-color: $muk-success
    &--warning
-      border-color: $warning
+      border-color: $muk-warning
    &--danger
-      border-color: $danger
+      border-color: $muk-danger
 

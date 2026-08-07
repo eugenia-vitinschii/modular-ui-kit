@@ -1,0 +1,12 @@
+/* ================= ERROR STATE =================  */
+
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
+
+   
+.muk-error-state
+   @include muk-border($muk-border-color: $muk-danger, $muk-border-style: dotted)
+   padding: 10px
+   &__action
+      display: flex
+      justify-content: center

@@ -1,0 +1,40 @@
+/* === BASE BUTTON ICON  === */
+
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
+
+
+.muk-btn-icon
+   border: none
+   background: none
+   cursor: pointer
+   display: inline-flex
+   align-items: center
+   transition: $muk-transition     
+   justify-content: center
+   margin: 0
+   padding: 0
+   svg
+      transition: $muk-transition
+   &--sm
+      @include muk-icon-button-size(32px, 18px)
+      --spinner-size: 14px
+   &--md
+      @include muk-icon-button-size(40px, 22px)
+      --spinner-size: 18px
+   &--lg
+      @include muk-icon-button-size(48px, 26px)
+      --spinner-size: 22px
+   &--primary
+      @include muk-icon-button-variant($muk-primary, $muk-primary-hover)
+   &--secondary
+      @include muk-icon-button-variant($muk-text, $muk-primary-hover)
+   &--success
+      @include muk-icon-button-variant($muk-success)
+   &--warning
+      @include muk-icon-button-variant($muk-warning)
+   &--danger
+      @include muk-icon-button-variant($muk-danger)
+   &--ghost
+      @include muk-icon-button-variant($muk-text-muted, $muk-text)
+

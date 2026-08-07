@@ -1,0 +1,47 @@
+/*=== FONTS ===*/
+
+@use '../abstracts/muk-mixins' as *
+@use '../abstracts/muk-tokens' as *
+
+/* === font sizes === */
+.muk-heading
+   @include muk-font-size($muk-heading, 34px)
+   font-weight: 600
+
+.muk-subheading
+   @include muk-font-size($muk-subheading, 28px)
+   font-weight: 500 
+
+.muk-body-text
+   @include muk-font-size($muk-body-text, 24px)
+   font-weight: 400
+
+/* === [tablet/desktop] === */
+@media (max-width: 1024px)
+   .muk-heading
+     @include muk-font-size($muk-heading-md, 30px)
+   .muk-subheading
+      @include muk-font-size($muk-subheading-md, 24px)
+   .muk-body-text
+      @include muk-font-size($muk-body-text-md, 22px)
+
+
+/* === [mobile] === */
+@media (max-width: 767px)
+   .muk-heading
+     @include muk-font-size($muk-heading-sm, 26px)
+   .muk-subheading
+      @include muk-font-size($muk-subheading-sm, 22px)
+   .muk-body-text
+      @include muk-font-size($muk-body-text-sm, 20px)
+
+a
+   display: block
+   transition: $muk-transition
+   text-underline-offset: 4px  
+   &:hover
+      opacity: 0.8
+      //filter: brightness(1.15) 
+   &:active
+      opacity: 0.6
+      filter: brightness(0.9)

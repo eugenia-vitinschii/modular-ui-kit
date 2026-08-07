@@ -1,16 +1,16 @@
 /* === SELECT === */
 
-@use '../../../abstracts/_tokens' as *
-@use '../../../abstracts/_mixins' as *
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
 
 
-.base-select
+.muk-select
    display: flex
    flex-direction: column
    &__wrapper
       position: relative
    &__field
-      @include form-element()
+      @include muk-form-element()
       width: 100%
       appearance: none
       border-radius: 0px
@@ -22,4 +22,4 @@
       transform: translateY(-50%)
       pointer-events: none
       font-size: 14px
-      color: $text-muted
+      color: $muk-text-muted

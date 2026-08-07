@@ -1,18 +1,18 @@
 /* ================= BASE TOAST =================  */
    
-@use '../../../abstracts/_tokens' as *
-@use '../../../abstracts/_mixins' as *
+@use '../../../abstracts/_muk-tokens' as *
+@use '../../../abstracts/_muk-mixins' as *
 
-.base-toast-container
+.muk-toast-container
    position: fixed
    top: 20px
    right: 20px
    z-index: 99999
    pointer-events: none
 
-.base-toast
-   @include border()
-   background: $bg
+.muk-toast
+   @include muk-border()
+   background: $muk-bg
    pointer-events: auto
    position: relative
    width: 300px
@@ -38,17 +38,17 @@
       transition: width 0.1s linear
 
 /* VARIANTS */
-.base-toast
+.muk-toast
    &--primary
-      border-color: $primary
+      border-color: $muk-primary
    &--secondary
-      border-color: $text
+      border-color: $muk-text
    &--success
-      border-color: $success
+      border-color: $muk-success
    &--warning
-      border-color: $warning
+      border-color: $muk-warning
    &--danger
-      border-color: $danger
+      border-color: $muk-danger
 
 //animations
 .toast-enter-active, .toast-leave-active
