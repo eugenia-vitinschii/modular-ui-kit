@@ -1,17 +1,17 @@
 <template>
   <Transition name="fade" mode="out-in">
-    <div class="wrapper" v-if="route.meta.layout === 'error' || route.meta.layout === 'login'">
-      <div class=" content">
+    <div class="muk-wrapper" v-if="route.meta.layout === 'error' || route.meta.layout === 'login'">
+      <div class="muk-content">
         <router-view />
       </div>
     </div>
-    <div class="wrapper" v-else>
+    <div class="muk-wrapper" v-else>
       <app-header />
-      <div class="content">
-        <base-breadcrumbs />
+      <div class="muk-content">
+        <muk-breadcrumbs />
         <router-view />
         <demo-widget />
-        <base-toast-container />
+        <muk-toast-container />
       </div>
       <app-footer />
     </div>
@@ -25,8 +25,8 @@ import { useRoute } from 'vue-router';
 /* === COMPONENTS === */
 import AppHeader from './widgets/AppHeader.vue';
 import AppFooter from './widgets/AppFooter.vue';
-import BaseBreadcrumbs from './components/ui/navigation/BaseBreadcrumbs.vue';
-import BaseToastContainer from './components/ui/feedback/BaseToastContainer.vue';
+import MukBreadcrumbs from './components/ui/navigation/MukBreadcrumbs.vue';
+import MukToastContainer from './components/ui/feedback/MukToastContainer.vue';
 
 /* === DEMO === */
 import DemoWidget from './modules/demo/components/DemoWidget.vue';

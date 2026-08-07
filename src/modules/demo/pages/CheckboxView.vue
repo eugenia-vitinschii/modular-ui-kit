@@ -1,29 +1,29 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Checkbox Preview</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Checkbox Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="form section">
-                  <base-text as="h2" :type="'subheading'">Checkbox</base-text>
+            <div class="muk-page__content">
+               <div class="form muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Checkbox</muk-text>
                   <div class="form__item">
-                     <base-checkbox v-model="baseValue" label="Remember me" />
+                     <muk-checkbox v-model="baseValue" label="Remember me" />
                   </div>
                   <div class="form__item">
-                     <base-checkbox v-model="hintValue" label="Subscribe to newsletter"
+                     <muk-checkbox v-model="hintValue" label="Subscribe to newsletter"
                         hint="We promise to send only high-quality articles once a week." />
                   </div>
                   <div class="form__item">
-                     <base-checkbox v-model="errorValue" label="I accept the Terms and Conditions"
+                     <muk-checkbox v-model="errorValue" label="I accept the Terms and Conditions"
                         error="This field is required" />
                   </div>
                   <div class="form__item">
-                     <base-checkbox v-model="disabledUnchecked" label="Unavailable option" disabled />
+                     <muk-checkbox v-model="disabledUnchecked" label="Unavailable option" disabled />
                   </div>
                   <div class="form__item">
-                     <base-checkbox v-model="disabledChecked" label="Locked active option" disabled />
+                     <muk-checkbox v-model="disabledChecked" label="Locked active option" disabled />
                   </div>
                </div>
             </div>
@@ -37,8 +37,8 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import MukCheckbox from '@/components/ui/form/MukCheckbox.vue';
+import MukText from '@/components/ui/typography/MukText.vue';
 
 /* state */
 const baseValue = ref(true)

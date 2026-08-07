@@ -1,8 +1,8 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper  error-page-wrapper">
-            <base-text :type="'heading'" as="h1">HOME PAGE</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper  error-page-wrapper">
+            <muk-text :type="'muk-heading'" as="h1">HOME PAGE</muk-text>
          </div>
       </div>
    </div>
@@ -10,6 +10,6 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import MukText from '@/components/ui/typography/MukText.vue';
 
 </script>

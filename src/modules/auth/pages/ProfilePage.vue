@@ -1,20 +1,20 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <base-text :type="'heading'" as="h1" v-if="auth.isAuthenticated">My profile</base-text>
-            <div class="page__content profile">
-               <div class="profile-info section" v-if="auth.isAuthenticated">
-                  <base-text :type="'subheading'" as="h2">Hi {{ auth.user?.name }} !</base-text>
-                  <base-text> {{ auth.user?.email }} !</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <muk-text :type="'muk-heading'" as="h1" v-if="auth.isAuthenticated">My profile</muk-text>
+            <div class="muk-page__content profile">
+               <div class="profile-info muk-section" v-if="auth.isAuthenticated">
+                  <muk-text :type="'muk-subheading'" as="h2">Hi {{ auth.user?.name }} !</muk-text>
+                  <muk-text> {{ auth.user?.email }} !</muk-text>
                   <div class="profile-actions">
-                     <base-button :variant="'secondary'" @click="handleLogout">logout</base-button>
+                     <muk-button :variant="'secondary'" @click="handleLogout">logout</muk-button>
                   </div>
                </div>
-               <div class="profile-guest section" v-else>
-                  <base-text :type="'subheading'" as="h2">You are not logged in!</base-text>
+               <div class="profile-guest muk-section" v-else>
+                  <muk-text :type="'muk-subheading'" as="h2">You are not logged in!</muk-text>
                   <div class="profile-actions">
-                     <base-button @click="handleLogin">login</base-button>
+                     <muk-button @click="handleLogin">login</muk-button>
                   </div>
                </div>
             </div>
@@ -25,8 +25,8 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
+import MukText from '@/components/ui/typography/MukText.vue';
+import MukButton from '@/components/ui/buttons/MukButton.vue';
 
 /*STORE */
 import { useAuthStore } from '../store/useAuthStore';

@@ -1,46 +1,44 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Toast & Modal Preview</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Toast & Modal Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="demo-controls section">
-                  <base-text as="h2" :type="'subheading'">Demo Controls [Toast]</base-text>
+            <div class="muk-page__content">
+               <div class="demo-controls muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Demo Controls [Toast]</muk-text>
                   <div class="demo-controls__buttons">
-                     <base-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">
+                     <muk-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">
                         Show {{ type }} toast
-                     </base-button>
+                     </muk-button>
                   </div>
                </div>
-               <div class="demo-controls section">
-                  <base-text as="h3" :type="'subheading'">Demo Controls [Modal]</base-text>
+               <div class="demo-controls muk-section">
+                  <muk-text as="h3" :type="'muk-subheading'">Demo Controls [Modal]</muk-text>
                   <div class="demo-controls__buttons">
-                     <base-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">
+                     <muk-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">
                         Show {{ type }} modal
-                     </base-button>
+                     </muk-button>
                   </div>
                </div>
             </div>
-            <base-modal v-model:open="isModalOpen" :title="activeTitle" :variant="activeVariant">
+            <muk-modal v-model:open="isModalOpen" :title="activeTitle" :variant="activeVariant">
                <template #content>
-                  <base-text>variant: {{ activeVariant }}</base-text>
-                  <base-input v-if="activeVariant === 'danger'" v-model="confirmText"
+                  <muk-text>variant: {{ activeVariant }}</muk-text>
+                  <muk-input v-if="activeVariant === 'danger'" v-model="confirmText"
                      placeholder="Type 'DELETE' to confirm" :error="inputError" />
-                  <base-checkbox v-if="activeVariant === 'warning'" v-model="isAgreed"
+                  <muk-checkbox v-if="activeVariant === 'warning'" v-model="isAgreed"
                      label="I accept the risk and want to proceed" />
                </template>
                <template #actions>
-                  <base-button variant="secondary" @click="isModalOpen = false">
+                  <muk-button variant="secondary" @click="isModalOpen = false">
                      cancel
-                  </base-button>
-                  <base-button :variant="activeVariant" @click="handleConfirm"
-                     :disabled="activeVariant === 'warning' && !isAgreed">
-                     confirm
-                  </base-button>
+                  </muk-button>
+                  <muk-button :variant="activeVariant" @click="handleConfirm"
+                     :disabled="activeVariant === 'warning' && !isAgreed"> confirm</muk-button>
                </template>
-            </base-modal>
+            </muk-modal>
          </div>
       </div>
    </div>
@@ -51,13 +49,13 @@
 import { ref } from 'vue';
 
 /* Components */
-import BaseButton from '@/components/ui/buttons/BaseButton.vue';
-import BaseInput from '@/components/ui/form/BaseInput.vue';
-import BaseCheckbox from '@/components/ui/form/BaseCheckbox.vue';
-import BaseModal from '@/components/ui/overlays/BaseModal.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
+import MukButton from '@/components/ui/buttons/MukButton.vue';
+import MukInput from '@/components/ui/form/MukInput.vue';
+import MukCheckbox from '@/components/ui/form/MukCheckbox.vue';
+import MukModal from '@/components/ui/overlays/MukModal.vue';
+import MukText from '@/components/ui/typography/MukText.vue';
 
-import { useToast } from '@/components/ui/feedback/useToast';
+import { useToast } from '@/components/ui/feedback/useMukToast';
 import type { UIVariant } from '@/types/ui.types'
 
 /*======= TOAST DEMO ======= */

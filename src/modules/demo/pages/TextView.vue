@@ -1,40 +1,38 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Text Preview</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Text Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="demo-controls section">
-                  <base-text as="h2" :type="'subheading'">Demo Controls</base-text>
-                  <base-input v-model="demoText" label="Custom text Preview" placeholder="Type something..." />
-                  <base-text>Variants</base-text>
+            <div class="muk-page__content">
+               <div class="demo-controls muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Demo Controls</muk-text>
+                  <muk-input v-model="demoText" label="Custom text Preview" placeholder="Type something..." />
+                  <muk-text>Variants</muk-text>
                   <div class="demo-controls--row">
-                     <base-radio v-for="variant in variantOptions" :key="variant" v-model="selectedVariant"
-                        name="text-variant" :value="variant" :label="variant"></base-radio>
+                     <muk-radio v-for="variant in variantOptions" :key="variant" v-model="selectedVariant"
+                        name="text-variant" :value="variant" :label="variant"></muk-radio>
                   </div>
-                  <base-text>Alignment:</base-text>
+                  <muk-text>Alignment:</muk-text>
                   <div class="demo-controls--row">
-                     <base-radio v-for="align in alignOptions" :key="align" v-model="selectedAlign" name="text-align"
+                     <muk-radio v-for="align in alignOptions" :key="align" v-model="selectedAlign" name="text-align"
                         :value="align" :label="align" />
                   </div>
                </div>
-               <div class="demo-controls section">
-                  <base-text as="h2" :type="'heading'">Variant: [{{ selectedVariant }}] Align: [{{ selectedAlign
-                  }}]</base-text>
-                  <base-text :type="'heading'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
-                     }}</base-text>
-                  <base-text :type="'subheading'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
-                     }}</base-text>
-                  <base-text :type="'body-text'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
-                     }}</base-text>
+               <div class="demo-controls muk-section">
+                  <muk-text as="h2" :type="'muk-heading'" :variant="selectedVariant" :align="selectedAlign">
+                     {{ demoText }}</muk-text>
+                  <muk-text :type="'muk-subheading'" :variant="selectedVariant" :align="selectedAlign">{{ demoText
+                  }}</muk-text>
+                  <muk-text :variant="selectedVariant" :align="selectedAlign">{{ demoText
+                  }}</muk-text>
                </div>
-               <div class="demo-controls section">
-                  <base-text as="h3" :type="'heading'">Custom Tags & Links (`as` prop) </base-text>
-                  <base-text as="a" href="#" :type="'subheading'">This is a Subheading rendered as a link (a
-                     tag)</base-text>
-                  <base-text>Rendered as default paragraph</base-text>
+               <div class="demo-controls muk-section">
+                  <muk-text as="h3" :type="'muk-heading'">Custom Tags & Links (`as` prop) </muk-text>
+                  <muk-text as="a" href="#" :type="'muk-subheading'">This is a Subheading rendered as a link (a
+                     tag)</muk-text>
+                  <muk-text>Rendered as default paragraph</muk-text>
                </div>
             </div>
          </div>
@@ -47,9 +45,9 @@
 import { ref } from 'vue'
 
 /* COMPONENTS */
-import BaseRadio from '@/components/ui/form/BaseRadio.vue';
-import BaseText from '@/components/ui/typography/BaseText.vue';
-import BaseInput from '@/components/ui/form/BaseInput.vue';
+import MukRadio from '@/components/ui/form/MukRadio.vue';
+import MukText from '@/components/ui/typography/MukText.vue';
+import MukInput from '@/components/ui/form/MukInput.vue';
 
 /* Types */
 import type { UITextVariant, UITextAlign } from '@/types/ui.types';
