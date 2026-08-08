@@ -1,23 +1,27 @@
 
 /*=== [wrapper: header, content, footer] ===*/
 
-@use '../abstracts/tokens' as *
-@use '../abstracts/mixins' as *
 
-.wrapper
+
+
+/*=== [wrapper: header, content, footer] ===*/
+@use '../abstracts/muk-tokens' as *
+
+.muk-wrapper
    display: flex
    flex-direction: column
    min-height: 100vh
-   background: $bg
+   background: $muk-bg
 
-.header
+.muk-header
    flex: 0 0 auto
 
-.content
+.muk-content
    flex: 1 0 auto
    padding: 20px 0px 0px 0px 
 
-.footer
+.muk-footer
+   background: $muk-bg-card
    padding: 20px 0px
    flex: 0 0 auto
    &__wrapper
@@ -26,7 +30,7 @@
       align-items: center
       gap: 10px
 
-.container
+.muk-container
    max-width: 1400px
    margin: 0px auto
    padding: 0px 20px
