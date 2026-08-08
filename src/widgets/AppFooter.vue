@@ -1,10 +1,10 @@
 <template>
-   <footer class="footer">
-      <div class="container">
-         <div class="footer__wrapper">
-            <base-text :type="'subheading'" :variant="'primary'" :align="'center'">[MODULAR UI KIT]</base-text>
-            <base-text as="a" :href="'https://github.com/eugenia-vitinschii/modular-ui-kit'" :variant="'muted'"
-               :align="'center'">[repo]</base-text>
+   <footer class="muk-footer">
+      <div class="muk-container">
+         <div class="muk-footer__wrapper">
+            <muk-text :type="'muk-subheading'" :variant="'primary'" :align="'center'">[MODULAR UI KIT]</muk-text>
+            <muk-text as="a" :href="'https://github.com/eugenia-vitinschii/modular-ui-kit'" :variant="'muted'"
+               :align="'center'">[repo]</muk-text>
          </div>
       </div>
    </footer>
@@ -12,5 +12,5 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import { BaseText } from 'modular-ui-kit-vue'
+import { MukText } from 'modular-ui-kit-vue'
 </script>

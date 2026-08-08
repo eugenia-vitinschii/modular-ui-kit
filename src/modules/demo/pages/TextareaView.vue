@@ -1,25 +1,25 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
             <div class="page__header">
-               <base-text as="h1" :type="'heading'">Textarea Preview</base-text>
+               <muk-text as="h1" :type="'muk-heading'">Textarea Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="form section">
-                  <base-text as="h2" :type="'subheading'">Textarea</base-text>
+            <div class="muk-page__content">
+               <div class="form muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Textarea</muk-text>
                   <div class="form__item">
-                     <base-textarea v-model="biography"
+                     <muk-textarea v-model="biography"
                         placeholder="Tell us about yourself, your skills, and your professional background..."
                         label="Biography" />
                   </div>
                   <div class="form__item">
-                     <base-textarea v-model="orderComment" label="Order Comments"
+                     <muk-textarea v-model="orderComment" label="Order Comments"
                         placeholder="Add special instructions for delivery..."
                         error="Comment length cannot exceed 150 characters." />
                   </div>
                   <div class="form__item">
-                     <base-textarea v-model="systemNotes" label="System Notes (Read Only)"
+                     <muk-textarea v-model="systemNotes" label="System Notes (Read Only)"
                         placeholder="No system notes available for this resource."
                         hint="This field is locked and managed by the administrator" disabled />
                   </div>
@@ -35,7 +35,7 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import { BaseTextarea, BaseText } from 'modular-ui-kit-vue'
+import { MukTextarea, MukText } from 'modular-ui-kit-vue'
 
 
 /* state */

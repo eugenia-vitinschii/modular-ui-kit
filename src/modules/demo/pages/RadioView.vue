@@ -1,21 +1,21 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Radio Preview</base-text>1>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Radio Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="form section">
-                  <base-text as="h2" :type="'subheading'">Radio</base-text>
+            <div class="muk-page__content">
+               <div class="form muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Radio</muk-text>
                   <div class="form__item">
-                     <base-radio v-model="selectedPlan" value="starter" name="billing-group" label="Starter Plan"
+                     <muk-radio v-model="selectedPlan" value="starter" name="billing-group" label="Starter Plan"
                         hint="Free forever, includes 3 active projects" />
-                     <base-radio v-model="selectedPlan" value="pro" name="billing-group" label="Pro Business"
+                     <muk-radio v-model="selectedPlan" value="pro" name="billing-group" label="Pro Business"
                         hint="$19/month, unlimited projects & team sharing" />
-                     <base-radio v-model="selectedPlan" value="enterprise" name="billing-group" label="Enterprise"
+                     <muk-radio v-model="selectedPlan" value="enterprise" name="billing-group" label="Enterprise"
                         hint="Custom solutions for large organizations" disabled />
-                     <base-radio v-model="errorPlan" value="declined" name="error-group"
+                     <muk-radio v-model="errorPlan" value="declined" name="error-group"
                         label="Accept terms & privacy policy"
                         error="You must accept the terms before changing your plan" />
                   </div>
@@ -31,7 +31,7 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import { BaseRadio, BaseText } from 'modular-ui-kit-vue'
+import { MukRadio, MukText } from 'modular-ui-kit-vue'
 
 
 /* state */

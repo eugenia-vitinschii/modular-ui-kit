@@ -1,46 +1,46 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Toast & Modal Preview</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Toast & Modal Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="demo-controls section">
-                  <base-text as="h2" :type="'subheading'">Demo Controls [Toast]</base-text>
+            <div class="muk-page__content">
+               <div class="demo-controls muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Demo Controls [Toast]</muk-text>
                   <div class="demo-controls__buttons">
-                     <base-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">
+                     <muk-button v-for="type in variants" :key="type" :variant="type" @click="triggerToast(type)">
                         Show {{ type }} toast
-                     </base-button>
+                     </muk-button>
                   </div>
                </div>
-               <div class="demo-controls section">
-                  <base-text as="h3" :type="'subheading'">Demo Controls [Modal]</base-text>
+               <div class="demo-controls muk-section">
+                  <muk-text as="h3" :type="'muk-subheading'">Demo Controls [Modal]</muk-text>
                   <div class="demo-controls__buttons">
-                     <base-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">
+                     <muk-button v-for="type in variants" :key="type" :variant="type" @click="openModal(type)">
                         Show {{ type }} modal
-                     </base-button>
+                     </muk-button>
                   </div>
                </div>
             </div>
-            <base-modal v-model:open="isModalOpen" :title="activeTitle" :variant="activeVariant">
+            <muk-modal v-model:open="isModalOpen" :title="activeTitle" :variant="activeVariant">
                <template #content>
-                  <base-text>variant: {{ activeVariant }}</base-text>
-                  <base-input v-if="activeVariant === 'danger'" v-model="confirmText"
+                  <muk-text>variant: {{ activeVariant }}</muk-text>
+                  <muk-input v-if="activeVariant === 'danger'" v-model="confirmText"
                      placeholder="Type 'DELETE' to confirm" :error="inputError" />
-                  <base-checkbox v-if="activeVariant === 'warning'" v-model="isAgreed"
+                  <muk-checkbox v-if="activeVariant === 'warning'" v-model="isAgreed"
                      label="I accept the risk and want to proceed" />
                </template>
                <template #actions>
-                  <base-button variant="secondary" @click="isModalOpen = false">
+                  <muk-button variant="secondary" @click="isModalOpen = false">
                      cancel
-                  </base-button>
-                  <base-button :variant="activeVariant" @click="handleConfirm"
+                  </muk-button>
+                  <muk-button :variant="activeVariant" @click="handleConfirm"
                      :disabled="activeVariant === 'warning' && !isAgreed">
                      confirm
-                  </base-button>
+                  </muk-button>
                </template>
-            </base-modal>
+            </muk-modal>
          </div>
       </div>
    </div>
@@ -51,13 +51,13 @@
 import { ref } from 'vue';
 
 /* Components */
-import { BaseButton, BaseInput, BaseCheckbox, BaseModal, BaseText, useToast } from 'modular-ui-kit-vue'
+import { MukButton, MukInput, MukCheckbox, MukModal, MukText, useMukToast } from 'modular-ui-kit-vue'
 
 import type { UIVariant } from 'modular-ui-kit-vue'
 
 /*======= TOAST DEMO ======= */
 
-const { addToast } = useToast()
+const { addToast } = useMukToast()
 
 const variants: UIVariant[] = [
    'primary',

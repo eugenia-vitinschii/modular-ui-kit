@@ -1,6 +1,6 @@
 <template>
    <div ref="widgetRef" class="demo-widget">
-      <base-button @click="toggleMenu">Demo UI Kit</base-button>
+      <muk-button @click="toggleMenu">Demo UI Kit</muk-button>
       <Transition name="fade">
          <div v-if="isOpen" class="demo-widget__menu" @mousedown.stop @touchstart.stop>
             <demo-navigation @close="isOpen = false" />
@@ -14,7 +14,7 @@
 import { ref } from 'vue';
 
 /* COMPONENTS */
-import { BaseButton } from 'modular-ui-kit-vue'
+import { MukButton } from 'modular-ui-kit-vue'
 import DemoNavigation from './DemoNavigation.vue';
 
 /* STATE */
@@ -33,7 +33,7 @@ function toggleMenu() {
   right: 30px
   bottom: 30px
   &__menu
-   @include container()
+   @include muk-container()
    max-height: 70vh
    overflow-y: auto
    scrollbar-width: thin

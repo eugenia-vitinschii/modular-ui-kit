@@ -1,16 +1,16 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Modular UI Kit</base-text>
-               <base-text as="h2" :type="'subheading'">Minimalist & Accessible Design System</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Modular UI Kit</muk-text>
+               <muk-text as="h2" :type="'muk-subheading'">Minimalist & Accessible Design System</muk-text>
             </div>
-            <div class="page__content">
-               <base-text as="a" href='https://github.com/eugenia-vitinschii/modular-ui-kit'>
+            <div class="muk-page__content">
+               <muk-text as="a" href='https://github.com/eugenia-vitinschii/modular-ui-kit'>
                   <img alt='GitHub Clones'
                      src='https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/eugenia-vitinschii/2e6247835bbf3928be881ca260cad051/raw/clone.json&logo=github'>
-               </base-text>
+               </muk-text>
             </div>
          </div>
       </div>
@@ -19,5 +19,5 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import { BaseText } from 'modular-ui-kit-vue'
+import { MukText } from 'modular-ui-kit-vue'
 </script>

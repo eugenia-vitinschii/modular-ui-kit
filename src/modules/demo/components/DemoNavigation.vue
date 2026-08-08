@@ -1,20 +1,20 @@
 <template>
    <aside class="demo-nav">
       <div class="demo-nav__header">
-         <base-text :type="'subheading'">UI Kit Showcase</base-text>
-         <base-icon-button aria-label="Close Demo" @click="$emit('close')">
+         <muk-text :type="'muk-subheading'">UI Kit Showcase</muk-text>
+         <muk-icon-button aria-label="Close Demo" @click="$emit('close')">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                <path
                   d="m336-280-56-56 144-144-144-143 56-56 144 144 143-144 56 56-144 143 144 144-56 56-143-144-144 144Z" />
             </svg>
-         </base-icon-button>
+         </muk-icon-button>
       </div>
       <nav class="demo-nav__body">
          <div class="demo-nav__group" v-for="group in navConfig" :key="group.title">
-            <base-text as="span" :variant="'primary'">{{ group.title }}</base-text>
+            <muk-text as="span" :variant="'primary'">{{ group.title }}</muk-text>
             <ul>
                <li v-for="link in group.items" :key="link.path">
-                  <base-text as="router-link" :to="link.path" @click="$emit('close')">{{ link.label }}</base-text>
+                  <muk-text as="router-link" :to="link.path" @click="$emit('close')">{{ link.label }}</muk-text>
                </li>
             </ul>
          </div>
@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 /* COMPONENTS */
-import { BaseText, BaseIconButton } from 'modular-ui-kit-vue'
+import { MukText, MukIconButton } from 'modular-ui-kit-vue'
 
 
 /* PROPS & EMITS */

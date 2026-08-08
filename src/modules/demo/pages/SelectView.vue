@@ -1,23 +1,23 @@
 <template>
-   <div class="page">
-      <div class="container">
-         <div class="page__wrapper">
-            <div class="page__header">
-               <base-text as="h1" :type="'heading'">Select Preview</base-text>
+   <div class="muk-page">
+      <div class="muk-container">
+         <div class="muk-page__wrapper">
+            <div class="muk-page__header">
+               <muk-text as="h1" :type="'muk-heading'">Select Preview</muk-text>
             </div>
-            <div class="page__content">
-               <div class="form section">
-                  <base-text as="h2" :type="'subheading'">Select</base-text>
+            <div class="muk-page__content">
+               <div class="form muk-section">
+                  <muk-text as="h2" :type="'muk-subheading'">Select</muk-text>
                   <div class="form__item">
-                     <base-select v-model="selectedCountry" :options="countries" placeholder="Select country..."
+                     <muk-select v-model="selectedCountry" :options="countries" placeholder="Select country..."
                         label="Your Country" />
                   </div>
                   <div class="form__item">
-                     <base-select v-model="selectedCity" :options="cities" placeholder="Select sity..."
-                        label="Your City" error="Please select your city to continue" />
+                     <muk-select v-model="selectedCity" :options="cities" placeholder="Select sity..." label="Your City"
+                        error="Please select your city to continue" />
                   </div>
                   <div class="form__item">
-                     <base-select v-model="lockedWorkModel" :options="workModelOptions" placeholder="Select sity..."
+                     <muk-select v-model="lockedWorkModel" :options="workModelOptions" placeholder="Select sity..."
                         label="Preferred Work Model" hint="Work model cannot be changed for this role." disabled />
                   </div>
                </div>
@@ -32,7 +32,7 @@
 import { ref } from 'vue'
 
 /* COMPONENTS */
-import { BaseSelect, BaseText } from 'modular-ui-kit-vue'
+import { MukSelect, MukText } from 'modular-ui-kit-vue'
 
 /* state */
 const selectedCountry = ref('')
